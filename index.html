@@ -82,6 +82,25 @@
 
   .nav-cta:hover { background: var(--yellow-dark); color: var(--black) !important; }
 
+  .hrasek-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    cursor: default;
+    margin-left: 1rem;
+  }
+  .hrasek-wrap:hover { opacity: 1; }
+  .hrasek-text {
+    font-size: 0.6rem;
+    color: rgba(58,170,32,0.7);
+    font-style: italic;
+    letter-spacing: 0.5px;
+    line-height: 1;
+  }
+
   /* ===== HERO ===== */
   #hero {
     min-height: 100vh;
@@ -617,6 +636,28 @@
     letter-spacing: 1px;
   }
 
+  .cenik-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.82rem;
+  }
+  .cenik-table tr {
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .cenik-table tr:last-child { border-bottom: none; }
+  .cenik-table td {
+    padding: 0.4rem 0;
+    color: #444;
+    line-height: 1.4;
+  }
+  .cenik-table td:last-child {
+    text-align: right;
+    font-weight: 700;
+    color: var(--green);
+    white-space: nowrap;
+  }
+
   /* ===== GALERIE ===== */
   #galerie { background: var(--white); }
 
@@ -863,6 +904,10 @@
     <li><a href="#galerie">Galerie</a></li>
     <li><a href="#kontakt" class="nav-cta">Objednat</a></li>
   </ul>
+  <div class="hrasek-wrap" title="Pro mého Hrášku 💚">
+    <span style="font-size:1.1rem">🫛</span>
+    <span class="hrasek-text">Láskuju!</span>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -1043,29 +1088,58 @@
   <div class="container">
     <p class="section-label">Kolik to stojí</p>
     <h2 class="section-title">Ceník</h2>
-    <p class="section-sub">Cena závisí na rozsahu a stavu znečištění. Napište nebo zavolejte pro nezávaznou nabídku.</p>
+    <p class="section-sub">Orientační ceny. Konečná cena se vždy stanoví na místě dle skutečného stavu znečištění.</p>
+
     <div class="cenik-grid">
       <div class="cenik-card">
         <span class="cenik-card-icon">🛋️</span>
         <div class="cenik-card-name">Sedačky & pohovky</div>
-        <p class="cenik-card-desc">Jednomístné křeslo, dvojsedák, trojsedák, rohová souprava. Cena dle velikosti a znečištění.</p>
-        <div class="cenik-card-price">Na dotaz</div>
+        <p class="cenik-card-desc">Hloubkové čištění včetně opěrek, bočnic a polštářů. Profi extraktor + 4fázový postup.</p>
+        <table class="cenik-table">
+          <tr><td>Křeslo / jednomístný</td><td>od 600 Kč</td></tr>
+          <tr><td>Velké křeslo (ušák)</td><td>od 700 Kč</td></tr>
+          <tr><td>Dvoumístná sedačka</td><td>od 1 000 Kč</td></tr>
+          <tr><td>Třímístná sedačka</td><td>od 1 200 Kč</td></tr>
+          <tr><td>Rohová 4 místa</td><td>od 1 500 Kč</td></tr>
+          <tr><td>Rohová 5–6 míst</td><td>od 1 800 Kč</td></tr>
+          <tr><td>Rohová 7+ míst</td><td>od 2 200 Kč</td></tr>
+          <tr><td>Gaučový polštář</td><td>120 Kč/ks</td></tr>
+          <tr><td>Opěrka / bočnice</td><td>100 Kč/ks</td></tr>
+        </table>
       </div>
       <div class="cenik-card">
         <span class="cenik-card-icon">🏠</span>
         <div class="cenik-card-name">Koberce & čalounění</div>
-        <p class="cenik-card-desc">Dle plochy v m². Předložky, koberce v obývacím pokoji, chodbách, dětských pokojích.</p>
-        <div class="cenik-card-price">Na dotaz</div>
+        <p class="cenik-card-desc">Extrakční čištění koberců všech typů. Cena dle plochy a výšky vlasu.</p>
+        <table class="cenik-table">
+          <tr><td>Standardní koberec</td><td>od 35 Kč/m²</td></tr>
+          <tr><td>Koberec vyšší vlas</td><td>od 45 Kč/m²</td></tr>
+          <tr><td>Kusový do 3 m²</td><td>od 300 Kč</td></tr>
+          <tr><td>Kusový 3–5 m²</td><td>od 450 Kč</td></tr>
+          <tr><td>Předložka malá</td><td>od 200 Kč</td></tr>
+          <tr><td>Firemní/kancelář</td><td>od 40 Kč/m²</td></tr>
+        </table>
+        <div style="margin-top:0.8rem; font-size:0.78rem; color:#aaa; font-style:italic;">* Minimální výjezd 800 Kč</div>
       </div>
       <div class="cenik-card">
         <span class="cenik-card-icon">🚗</span>
         <div class="cenik-card-name">Auto interiér</div>
-        <p class="cenik-card-desc">Autosedačky, koberečky, čalounění stropu. Osobní auta, SUV, dodávky, autobusy.</p>
-        <div class="cenik-card-price">Na dotaz</div>
+        <p class="cenik-card-desc">Kompletní čištění autosedaček, koberečků a čalounění. Suché do hodiny.</p>
+        <table class="cenik-table">
+          <tr><td>Celý interiér</td><td>od 2 200 Kč</td></tr>
+          <tr><td>Pouze sedačky</td><td>od 1 400 Kč</td></tr>
+          <tr><td>Pouze koberečky</td><td>od 800 Kč</td></tr>
+        </table>
+        <div style="margin-top:1.2rem">
+          <span class="service-tag">✨ Ošetření proti zašpinění +350 Kč</span>
+        </div>
+        <div style="margin-top:0.5rem">
+          <span class="service-tag" style="background:var(--black)">🌿 Dezodorace +200 Kč</span>
+        </div>
       </div>
     </div>
     <div class="cenik-note">
-      🐒 Napište na Instagram nebo zavolejte — rádi poradím a domluvíme termín!
+      🐒 Ceny jsou orientační — finální cena vždy na místě dle znečištění. Minimální výjezd 800 Kč. Napište nebo zavolejte!
     </div>
   </div>
 </section>
@@ -1132,7 +1206,7 @@
           <div class="kontakt-icon-wrap">✉️</div>
           <div>
             <div class="kontakt-item-label">Email</div>
-            <a href="mailto:opici.expres@gmail.com" class="kontakt-item-value">opici.expres@gmail.com</a>
+            <a href="/cdn-cgi/l/email-protection#dcb3acb5bfb5f2b9a4acaeb9af9cbbb1bdb5b0f2bfb3b1" class="kontakt-item-value"><span class="__cf_email__" data-cfemail="bfd0cfd6dcd691dac7cfcddaccffd8d2ded6d391dcd0d2">[email&#160;protected]</span></a>
           </div>
         </div>
         <div class="kontakt-item">
@@ -1150,19 +1224,23 @@
           </div>
         </div>
       </div>
-      <div class="kontakt-form">
+      <form class="kontakt-form" action="https://formspree.io/f/mqegzajj" method="POST">
         <div class="form-title">Nezávazná poptávka</div>
         <div class="form-group">
           <label>Vaše jméno</label>
-          <input type="text" placeholder="Jan Novák">
+          <input type="text" name="jmeno" placeholder="Jan Novák" required>
         </div>
         <div class="form-group">
-          <label>Telefon nebo email</label>
-          <input type="text" placeholder="777 123 456">
+          <label>Telefon</label>
+          <input type="tel" name="telefon" placeholder="777 123 456" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="vas@email.cz">
         </div>
         <div class="form-group">
           <label>Co potřebujete vyčistit?</label>
-          <select>
+          <select name="sluzba" required>
             <option value="">Vyberte službu...</option>
             <option>Sedačka / pohovka</option>
             <option>Koberec</option>
@@ -1172,12 +1250,14 @@
         </div>
         <div class="form-group">
           <label>Zpráva (nepovinné)</label>
-          <textarea placeholder="Popište co potřebujete, lokalitu, preferovaný termín..."></textarea>
+          <textarea name="zprava" placeholder="Popište co potřebujete, lokalitu, preferovaný termín..."></textarea>
         </div>
-        <button class="form-submit" onclick="alert('Děkujeme! Brzy vás kontaktujeme. Nebo nás rovnou zavolejte: 734 259 525 🐒')">
+        <input type="hidden" name="_subject" value="Nová poptávka — Opičí Expres 🐒">
+        <input type="hidden" name="_next" value="https://opiciexpres.github.io/opiciexpres">
+        <button type="submit" class="form-submit">
           🐒 Odeslat poptávku
         </button>
-      </div>
+      </form>
     </div>
   </div>
 </section>
@@ -1190,9 +1270,4 @@
 
 <!-- FLOATING BTNS -->
 <div class="floating-cta">
-  <a href="https://instagram.com/opici_expres" target="_blank" class="float-btn float-ig" title="Instagram">📸</a>
-  <a href="tel:734259525" class="float-btn float-tel" title="Zavolat">📞</a>
-</div>
-
-</body>
-</html>
+  <a href="https://instagram.com/opici_expres" target="_blank" class="float-btn
