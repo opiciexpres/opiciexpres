@@ -30,7 +30,25 @@
     overflow-x: hidden;
   }
 
-  /* ===== NAV ===== */
+  /* Světlé sekce izolují banány — neprosvítají přes ně */
+  #sluzby, #vyhody, #cenik, #galerie, .usp-strip, nav, footer {
+    isolation: isolate;
+    position: relative;
+    z-index: 3;
+  }
+  /* Tmavé sekce nechají banány prosvítat */
+  #hero, #postup, #kontakt {
+    position: relative;
+    z-index: 1;
+  }
+  /* Tlačítka, ikony a formulář nad banány */
+  .btn-primary, .btn-secondary, .hero-badge,
+  .hero-sticker, .floating-cta, .form-submit,
+  .kontakt-icon-wrap, .kontakt-item, .kontakt-form {
+    isolation: isolate;
+    position: relative;
+    z-index: 10;
+  }
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -1270,4 +1288,67 @@
 
 <!-- FLOATING BTNS -->
 <div class="floating-cta">
-  <a href="https://instagram.com/opici_expres" target="_blank" class="float-btn
+  <a href="https://instagram.com/opici_expres" target="_blank" class="float-btn float-ig" title="Instagram">📸</a>
+  <a href="tel:734259525" class="float-btn float-tel" title="Zavolat">📞</a>
+</div>
+
+<!-- LÉTAJÍCÍ BANÁNY — viditelné jen na černém pozadí -->
+<div id="bananas-container" style="position:fixed;inset:0;pointer-events:none;z-index:2;overflow:hidden;mix-blend-mode:screen;"></div>
+
+<!-- OPIČÁK ZA MYŠÍ -->
+<div id="monkey-cursor" style="position:fixed;pointer-events:none;z-index:9999;font-size:2rem;transform:translate(-50%,-50%);transition:left 0.15s ease,top 0.15s ease;left:-100px;top:-100px;">🐒</div>
+
+<script>
+// === LÉTAJÍCÍ BANÁNY — furt letí, viditelné jen na černém pozadí ===
+const container = document.getElementById('bananas-container');
+const bananaCount = 20;
+
+for (let i = 0; i < bananaCount; i++) {
+  const b = document.createElement('div');
+  const size = Math.random() * 24 + 14;
+  const left = Math.random() * 100;
+  const delay = Math.random() * 14;
+  const duration = Math.random() * 10 + 14;
+  b.style.cssText = `
+    position:absolute;
+    left:${left}%;
+    top:-60px;
+    font-size:${size}px;
+    opacity:${Math.random() * 0.35 + 0.15};
+    animation: floatBanana ${duration}s ${delay}s linear infinite;
+  `;
+  b.textContent = '🍌';
+  container.appendChild(b);
+}
+
+const styleEl = document.createElement('style');
+styleEl.textContent = `
+  @keyframes floatBanana {
+    0%   { transform: translateY(-60px) rotate(0deg); }
+    100% { transform: translateY(110vh) rotate(720deg); }
+  }
+`;
+document.head.appendChild(styleEl);
+
+// === OPIČÁK ZA MYŠÍ ===
+const monkey = document.getElementById('monkey-cursor');
+let mouseX = -200, mouseY = -200;
+let monkeyX = -200, monkeyY = -200;
+
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function animateMonkey() {
+  monkeyX += (mouseX - monkeyX) * 0.12;
+  monkeyY += (mouseY - monkeyY) * 0.12;
+  monkey.style.left = monkeyX + 'px';
+  monkey.style.top = monkeyY + 'px';
+  requestAnimationFrame(animateMonkey);
+}
+animateMonkey();
+</script>
+
+</body>
+</html>
