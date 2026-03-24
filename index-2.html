@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opičí Expres — Profi tepování Opava</title>
+<meta name="description" content="Profesionální tepování sedaček, koberců a autosedaček v Opavě. Profi extraktor, hloubkové čištění, suché do 1 hodiny. Žádné opičárny!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --yellow: #F5D020;
+    --yellow-dark: #D4A800;
+    --green: #2D9018;
+    --green-dark: #1A5A0A;
+    --green-light: #3AAA20;
+    --black: #111111;
+    --white: #ffffff;
+    --gray: #f5f5f0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 64px;
+    border-bottom: 3px solid var(--yellow);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--yellow);
+    letter-spacing: 2px;
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--green-light); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--yellow); }
+
+  .nav-cta {
+    background: var(--yellow);
+    color: var(--black) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 700 !important;
+  }
+
+  .nav-cta:hover { background: var(--yellow-dark); color: var(--black) !important; }
+
+  .hrasek-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    cursor: default;
+    margin-left: 1rem;
+  }
+  .hrasek-wrap:hover { opacity: 1; }
+  .hrasek-text {
+    font-size: 0.6rem;
+    color: rgba(58,170,32,0.7);
+    font-style: italic;
+    letter-spacing: 0.5px;
+    line-height: 1;
+  }
+
+  /* ===== HERO ===== */
+  #hero {
+    min-height: 100vh;
+    background: var(--black);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding-top: 64px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(245,208,32,0.03) 40px,
+      rgba(245,208,32,0.03) 80px
+    );
+    pointer-events: none;
+  }
+
+  .hero-left {
+    padding: 4rem 2rem 4rem 4rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--green);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 8vw, 7rem);
+    line-height: 0.95;
+    color: var(--white);
+    letter-spacing: 2px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .hero-title .yellow { color: var(--yellow); }
+  .hero-title .green { color: var(--green-light); }
+
+  .hero-tagline {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--yellow);
+    margin: 1.5rem 0;
+    letter-spacing: 1px;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-sub {
+    color: rgba(255,255,255,0.65);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 460px;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+
+  .btn-primary {
+    background: var(--yellow);
+    color: var(--black);
+    padding: 1rem 2rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.2s, background 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    padding: 1rem 2rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--yellow); color: var(--yellow); transform: translateY(-2px); }
+
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    animation: fadeUp 0.6s 0.5s ease both;
+  }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--yellow);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.2rem;
+  }
+
+  .hero-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 4rem 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-logo-wrap {
+    position: relative;
+    animation: floatUp 3s ease-in-out infinite;
+  }
+
+  .hero-logo-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 20px;
+    background: radial-gradient(ellipse, rgba(245,208,32,0.3) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-logo-wrap img {
+    width: 340px;
+    max-width: 100%;
+    filter: drop-shadow(0 20px 60px rgba(245,208,32,0.2));
+  }
+
+  .hero-sticker {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--green);
+    color: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 3px solid var(--yellow);
+    animation: spin-slow 8s linear infinite;
+  }
+
+  .hero-sticker strong {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--yellow);
+  }
+
+  /* ===== USP STRIP ===== */
+  .usp-strip {
+    background: var(--yellow);
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+  .usp-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--black);
+  }
+
+  .usp-icon { font-size: 1.2rem; }
+
+  /* ===== SECTIONS ===== */
+  section { padding: 6rem 2rem; }
+
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.8rem;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.7;
+    max-width: 560px;
+  }
+
+  /* ===== SERVICES ===== */
+  #sluzby { background: var(--gray); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .service-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 2px solid transparent;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--yellow);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+
+  .service-card:hover {
+    border-color: var(--yellow);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .service-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.6rem;
+    color: var(--black);
+  }
+
+  .service-desc {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .service-tag {
+    display: inline-block;
+    margin-top: 1rem;
+    background: var(--green);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+  }
+
+  /* ===== POSTUP ===== */
+  #postup { background: var(--black); color: var(--white); }
+  #postup .section-title { color: var(--white); }
+  #postup .section-sub { color: rgba(255,255,255,0.6); }
+
+  .postup-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .postup-step {
+    position: relative;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .postup-step:hover {
+    background: rgba(245,208,32,0.06);
+    border-color: rgba(245,208,32,0.3);
+  }
+
+  .step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: rgba(245,208,32,0.15);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .step-icon { font-size: 1.5rem; margin-bottom: 0.8rem; display: block; }
+
+  .step-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--yellow);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+
+  .step-desc {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+
+  /* ===== VYHODY ===== */
+  #vyhody { background: var(--white); }
+
+  .vyhody-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .vyhoda-list { display: flex; flex-direction: column; gap: 1.2rem; }
+
+  .vyhoda-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.2rem;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .vyhoda-item:hover {
+    border-color: var(--yellow);
+    box-shadow: 0 4px 20px rgba(245,208,32,0.15);
+  }
+
+  .vyhoda-icon-wrap {
+    width: 44px;
+    height: 44px;
+    background: var(--yellow);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .vyhoda-text strong {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+  }
+
+  .vyhoda-text span {
+    font-size: 0.85rem;
+    color: #777;
+    line-height: 1.5;
+  }
+
+  .vyhody-highlight {
+    background: var(--black);
+    border-radius: 16px;
+    padding: 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vyhody-highlight::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at center, rgba(245,208,32,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .highlight-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 8rem;
+    color: var(--yellow);
+    line-height: 1;
+    display: block;
+  }
+
+  .highlight-unit {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: var(--green-light);
+    letter-spacing: 3px;
+  }
+
+  .highlight-desc {
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+    margin-top: 1rem;
+    line-height: 1.6;
+  }
+
+  /* ===== CENÍK ===== */
+  #cenik { background: var(--gray); }
+
+  .cenik-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--yellow);
+    color: var(--black);
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-top: 2rem;
+  }
+
+  .cenik-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .cenik-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 2px solid #eee;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .cenik-card:hover {
+    border-color: var(--green);
+    transform: translateY(-4px);
+  }
+
+  .cenik-card-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+
+  .cenik-card-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+
+  .cenik-card-desc {
+    font-size: 0.85rem;
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+
+  .cenik-card-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--green);
+    letter-spacing: 1px;
+  }
+
+  .cenik-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.82rem;
+  }
+  .cenik-table tr {
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .cenik-table tr:last-child { border-bottom: none; }
+  .cenik-table td {
+    padding: 0.4rem 0;
+    color: #444;
+    line-height: 1.4;
+  }
+  .cenik-table td:last-child {
+    text-align: right;
+    font-weight: 700;
+    color: var(--green);
+    white-space: nowrap;
+  }
+
+  /* ===== GALERIE ===== */
+  #galerie { background: var(--white); }
+
+  .galerie-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .galerie-item {
+    aspect-ratio: 4/3;
+    background: var(--gray);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    border: 2px dashed #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #aaa;
+    font-size: 0.85rem;
+    text-align: center;
+    transition: border-color 0.3s;
+  }
+
+  .galerie-item:hover { border-color: var(--yellow); }
+
+  .galerie-placeholder { font-size: 2rem; }
+
+  .galerie-note {
+    text-align: center;
+    margin-top: 2rem;
+    color: #aaa;
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  /* ===== KONTAKT ===== */
+  #kontakt { background: var(--black); color: var(--white); }
+  #kontakt .section-title { color: var(--white); }
+  #kontakt .section-sub { color: rgba(255,255,255,0.6); }
+
+  .kontakt-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+  }
+
+  .kontakt-info { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .kontakt-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .kontakt-icon-wrap {
+    width: 50px;
+    height: 50px;
+    background: var(--yellow);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .kontakt-item-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 0.2rem;
+  }
+
+  .kontakt-item-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .kontakt-item-value:hover { color: var(--yellow); }
+
+  .kontakt-form {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+
+  .form-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: var(--yellow);
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group { margin-bottom: 1rem; }
+
+  .form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 0.4rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--yellow);
+  }
+
+  .form-group select option { background: #222; color: white; }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--yellow);
+    color: var(--black);
+    border: none;
+    padding: 1rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .form-submit:hover { background: var(--yellow-dark); transform: translateY(-2px); }
+
+  /* ===== FLOATING CTA ===== */
+  .floating-cta {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .float-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .float-btn:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(0,0,0,0.4); }
+  .float-tel { background: var(--yellow); }
+  .float-ig { background: var(--green); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: #0a0a0a;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  footer strong { color: var(--yellow); }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes floatUp {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    #hero { grid-template-columns: 1fr; text-align: center; }
+    .hero-left { padding: 3rem 1.5rem 2rem; }
+    .hero-right { padding: 0 1.5rem 3rem; }
+    .hero-logo-wrap img { width: 220px; }
+    .hero-btns { justify-content: center; }
+    .hero-stats { justify-content: center; }
+    .hero-sticker { display: none; }
+    .services-grid, .postup-grid, .cenik-grid, .galerie-grid { grid-template-columns: 1fr; }
+    .vyhody-wrap, .kontakt-wrap { grid-template-columns: 1fr; gap: 2rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .usp-strip { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">OPIČÍ <span>EXPRES</span></a>
+  <ul class="nav-links">
+    <li><a href="#sluzby">Služby</a></li>
+    <li><a href="#postup">Postup</a></li>
+    <li><a href="#cenik">Ceník</a></li>
+    <li><a href="#galerie">Galerie</a></li>
+    <li><a href="#kontakt" class="nav-cta">Objednat</a></li>
+  </ul>
+  <div class="hrasek-wrap" title="Pro mého Hrášku 💚">
+    <span style="font-size:1.1rem">🫛</span>
+    <span class="hrasek-text">Láskuju!</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-left">
+    <span class="hero-badge">📍 Opava & okolí</span>
+    <h1 class="hero-title">
+      <span class="yellow">OPIČÍ</span><br>
+      <span class="green">EXPRES</span><br>
+      TEPOVÁNÍ
+    </h1>
+    <p class="hero-tagline">Žádné opičárny. Suché do hodiny.</p>
+    <p class="hero-sub">Jmenuji se Dominik a říkají mi Opičák! Profi extraktor s vysokým sacím podtlakem + profesionální chemie = hloubkové čištění a sucho za 60 minut. Přijedu k vám domů.</p>
+    <div class="hero-btns">
+      <a href="#kontakt" class="btn-primary">🐒 Objednat čištění</a>
+      <a href="tel:734259525" class="btn-secondary">📞 734 259 525</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">1H</div>
+        <div class="stat-label">Schnutí</div>
+      </div>
+      <div>
+        <div class="stat-num">3×</div>
+        <div class="stat-label">Fáze čištění</div>
+      </div>
+      <div>
+        <div class="stat-num">7/7</div>
+        <div class="stat-label">Dní v týdnu</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-logo-wrap">
+      <img src="logo.png" alt="Opičí Expres logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <div style="display:none; width:280px; height:280px; background:var(--green); border-radius:50%; align-items:center; justify-content:center; border: 6px solid var(--yellow);">
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:1.8rem; color:var(--yellow); text-align:center; letter-spacing:2px;">OPIČÍ<br>EXPRES</div>
+      </div>
+      <div class="hero-sticker">
+        <strong>1H</strong>
+        suché!
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USP STRIP -->
+<div class="usp-strip">
+  <div class="usp-item"><span class="usp-icon">⚙️</span> Profi extraktor</div>
+  <div class="usp-item"><span class="usp-icon">🧪</span> Profi chemie</div>
+  <div class="usp-item"><span class="usp-icon">⚡</span> Suché do 1 hodiny</div>
+  <div class="usp-item"><span class="usp-icon">🏠</span> Přijedu k vám</div>
+  <div class="usp-item"><span class="usp-icon">📅</span> I o víkendech</div>
+</div>
+
+<!-- SLUŽBY -->
+<section id="sluzby">
+  <div class="container">
+    <p class="section-label">Co čistíme</p>
+    <h2 class="section-title">Naše služby</h2>
+    <p class="section-sub">Hloubkové tepování přímo u vás doma — bez nutnosti cokoliv vozit.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-emoji">🛋️</span>
+        <div class="service-name">Sedačky & pohovky</div>
+        <p class="service-desc">Hloubkové čištění čalounění, rohových souprav i jednomístných křesel. Odstraníme skvrny, prach, roztoče a pachy.</p>
+        <span class="service-tag">Nejžádanější</span>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">🏠</span>
+        <div class="service-name">Koberce & čalounění</div>
+        <p class="service-desc">Tepování koberců, předložek a textilního čalounění. Šetrné k vláknům, účinné na nečistoty.</p>
+        <span class="service-tag">Rychlé schnutí</span>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">🚗</span>
+        <div class="service-name">Autosedačky & interiér</div>
+        <p class="service-desc">Kompletní čištění autosedaček, koberečků a čalounění stropu. Auto jako nové — suché do hodiny.</p>
+        <span class="service-tag">Oblíbené</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POSTUP -->
+<section id="postup">
+  <div class="container">
+    <p class="section-label" style="color:var(--green-light)">Jak pracujeme</p>
+    <h2 class="section-title">Správný technologický postup</h2>
+    <p class="section-sub">Nedělám to narychlo. Každé čištění probíhá ve 4 krocích které zaručují skutečně čistý výsledek.</p>
+    <div class="postup-grid">
+      <div class="postup-step">
+        <div class="step-num">01</div>
+        <span class="step-icon">🧴</span>
+        <div class="step-title">Odmašťovač</div>
+        <p class="step-desc">Nanáším profesionální odmašťovač který rozbíjí mastnotu a uvolňuje vlákna pro hloubkové čištění.</p>
+      </div>
+      <div class="postup-step">
+        <div class="step-num">02</div>
+        <span class="step-icon">🪥</span>
+        <div class="step-title">Kartáčování</div>
+        <p class="step-desc">Kartáčem vydrhnu vlákna do hloubky — nečistoty se uvolní z každého vlákna ještě před tepováním.</p>
+      </div>
+      <div class="postup-step">
+        <div class="step-num">03</div>
+        <span class="step-icon">⚙️</span>
+        <div class="step-title">Profi tepování</div>
+        <p class="step-desc">Extraktor s vysokým sacím podtlakem vytáhne veškerou nečistotu i chemii. Výsledek vidíte okamžitě.</p>
+      </div>
+      <div class="postup-step">
+        <div class="step-num">04</div>
+        <span class="step-icon">✨</span>
+        <div class="step-title">pH neutrální oplach</div>
+        <p class="step-desc">Opláchnutí pH neutrálním roztokem — žádná lepivost, žádné zbytky chemie. Volitelně ošetření proti zašpinění.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VÝHODY -->
+<section id="vyhody">
+  <div class="container">
+    <p class="section-label">Proč my</p>
+    <h2 class="section-title">Naše výhody</h2>
+    <div class="vyhody-wrap">
+      <div class="vyhoda-list">
+        <div class="vyhoda-item">
+          <div class="vyhoda-icon-wrap">⚡</div>
+          <div class="vyhoda-text">
+            <strong>Suché do 1 hodiny</strong>
+            <span>Díky vysokému sacímu podtlaku extraktoru — ne za půl dne, ne přes noc. Za hodinu sedíte na gauči.</span>
+          </div>
+        </div>
+        <div class="vyhoda-item">
+          <div class="vyhoda-icon-wrap">🏠</div>
+          <div class="vyhoda-text">
+            <strong>Přijedu k vám domů</strong>
+            <span>Nemusíte nic vozit ani nikam chodit. Přijedu, vyčistím a odjedu. Vy si jen vychutnáte výsledek.</span>
+          </div>
+        </div>
+        <div class="vyhoda-item">
+          <div class="vyhoda-icon-wrap">🧪</div>
+          <div class="vyhoda-text">
+            <strong>Profesionální chemie</strong>
+            <span>Používám profi čisticí prostředky — ne supermarketové přípravky. pH neutrální oplach zabrání lepivosti.</span>
+          </div>
+        </div>
+        <div class="vyhoda-item">
+          <div class="vyhoda-icon-wrap">📅</div>
+          <div class="vyhoda-text">
+            <strong>Flexibilní termíny</strong>
+            <span>Pracuji i o sobotách a nedělích. Termín dohodneme individuálně — přijedu kdykoliv vám to vyhovuje.</span>
+          </div>
+        </div>
+        <div class="vyhoda-item">
+          <div class="vyhoda-icon-wrap">🐾</div>
+          <div class="vyhoda-text">
+            <strong>Bezpečné pro rodiny & alergiky</strong>
+            <span>Šetrné k dětem, mazlíčkům i alergiím. Odstraním roztoče, chlupy a alergeny z hloubky vláken.</span>
+          </div>
+        </div>
+      </div>
+      <div class="vyhody-highlight">
+        <span class="highlight-num">60</span>
+        <div class="highlight-unit">MINUT</div>
+        <p class="highlight-desc">A vaše sedačka, koberec nebo auto je čisté <strong style="color:var(--yellow)">a suché</strong>. Žádné čekání přes noc. Žádné opičárny.</p>
+        <div style="margin-top:2rem">
+          <a href="tel:734259525" class="btn-primary" style="display:inline-flex">📞 Zavolat hned</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CENÍK -->
+<section id="cenik">
+  <div class="container">
+    <p class="section-label">Kolik to stojí</p>
+    <h2 class="section-title">Ceník</h2>
+    <p class="section-sub">Orientační ceny. Konečná cena se vždy stanoví na místě dle skutečného stavu znečištění.</p>
+
+    <div class="cenik-grid">
+      <div class="cenik-card">
+        <span class="cenik-card-icon">🛋️</span>
+        <div class="cenik-card-name">Sedačky & pohovky</div>
+        <p class="cenik-card-desc">Hloubkové čištění včetně opěrek, bočnic a polštářů. Profi extraktor + 4fázový postup.</p>
+        <table class="cenik-table">
+          <tr><td>Křeslo / jednomístný</td><td>od 600 Kč</td></tr>
+          <tr><td>Velké křeslo (ušák)</td><td>od 700 Kč</td></tr>
+          <tr><td>Dvoumístná sedačka</td><td>od 1 000 Kč</td></tr>
+          <tr><td>Třímístná sedačka</td><td>od 1 200 Kč</td></tr>
+          <tr><td>Rohová 4 místa</td><td>od 1 500 Kč</td></tr>
+          <tr><td>Rohová 5–6 míst</td><td>od 1 800 Kč</td></tr>
+          <tr><td>Rohová 7+ míst</td><td>od 2 200 Kč</td></tr>
+          <tr><td>Gaučový polštář</td><td>120 Kč/ks</td></tr>
+          <tr><td>Opěrka / bočnice</td><td>100 Kč/ks</td></tr>
+        </table>
+      </div>
+      <div class="cenik-card">
+        <span class="cenik-card-icon">🏠</span>
+        <div class="cenik-card-name">Koberce & čalounění</div>
+        <p class="cenik-card-desc">Extrakční čištění koberců všech typů. Cena dle plochy a výšky vlasu.</p>
+        <table class="cenik-table">
+          <tr><td>Standardní koberec</td><td>od 35 Kč/m²</td></tr>
+          <tr><td>Koberec vyšší vlas</td><td>od 45 Kč/m²</td></tr>
+          <tr><td>Kusový do 3 m²</td><td>od 300 Kč</td></tr>
+          <tr><td>Kusový 3–5 m²</td><td>od 450 Kč</td></tr>
+          <tr><td>Předložka malá</td><td>od 200 Kč</td></tr>
+          <tr><td>Firemní/kancelář</td><td>od 40 Kč/m²</td></tr>
+        </table>
+        <div style="margin-top:0.8rem; font-size:0.78rem; color:#aaa; font-style:italic;">* Minimální výjezd 800 Kč</div>
+      </div>
+      <div class="cenik-card">
+        <span class="cenik-card-icon">🚗</span>
+        <div class="cenik-card-name">Auto interiér</div>
+        <p class="cenik-card-desc">Kompletní čištění autosedaček, koberečků a čalounění. Suché do hodiny.</p>
+        <table class="cenik-table">
+          <tr><td>Celý interiér</td><td>od 2 200 Kč</td></tr>
+          <tr><td>Pouze sedačky</td><td>od 1 400 Kč</td></tr>
+          <tr><td>Pouze koberečky</td><td>od 800 Kč</td></tr>
+        </table>
+        <div style="margin-top:1.2rem">
+          <span class="service-tag">✨ Ošetření proti zašpinění +350 Kč</span>
+        </div>
+        <div style="margin-top:0.5rem">
+          <span class="service-tag" style="background:var(--black)">🌿 Dezodorace +200 Kč</span>
+        </div>
+      </div>
+    </div>
+    <div class="cenik-note">
+      🐒 Ceny jsou orientační — finální cena vždy na místě dle znečištění. Minimální výjezd 800 Kč. Napište nebo zavolejte!
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section id="galerie">
+  <div class="container">
+    <p class="section-label">Naše práce</p>
+    <h2 class="section-title">Fotogalerie před / po</h2>
+    <p class="section-sub">Výsledky mluví za vše. Brzy zde najdete fotky skutečných zakázek.</p>
+    <div class="galerie-grid">
+      <div class="galerie-item">
+        <div class="galerie-placeholder">📸</div>
+        <span>Před / Po<br>Sedačka</span>
+      </div>
+      <div class="galerie-item">
+        <div class="galerie-placeholder">📸</div>
+        <span>Před / Po<br>Koberec</span>
+      </div>
+      <div class="galerie-item">
+        <div class="galerie-placeholder">📸</div>
+        <span>Před / Po<br>Auto interiér</span>
+      </div>
+      <div class="galerie-item">
+        <div class="galerie-placeholder">📸</div>
+        <span>Před / Po<br>Rohová souprava</span>
+      </div>
+      <div class="galerie-item">
+        <div class="galerie-placeholder">📸</div>
+        <span>Před / Po<br>Autosedačky</span>
+      </div>
+      <div class="galerie-item">
+        <div class="galerie-placeholder">📸</div>
+        <span>Před / Po<br>Čalounění</span>
+      </div>
+    </div>
+    <p class="galerie-note">📸 Sledujte nás na Instagramu @opici_expres — tam průběžně přidáváme novinky a výsledky!</p>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt">
+  <div class="container">
+    <p class="section-label" style="color:var(--green-light)">Spojte se s námi</p>
+    <h2 class="section-title">Objednejte se</h2>
+    <p class="section-sub">Napište, zavolejte nebo pošlete zprávu. Odpovím co nejdříve a domluvíme termín.</p>
+    <div class="kontakt-wrap">
+      <div class="kontakt-info">
+        <div class="kontakt-item">
+          <div class="kontakt-icon-wrap">📞</div>
+          <div>
+            <div class="kontakt-item-label">Telefon</div>
+            <a href="tel:734259525" class="kontakt-item-value">734 259 525</a>
+          </div>
+        </div>
+        <div class="kontakt-item">
+          <div class="kontakt-icon-wrap">📸</div>
+          <div>
+            <div class="kontakt-item-label">Instagram</div>
+            <a href="https://instagram.com/opici_expres" target="_blank" class="kontakt-item-value">@opici_expres</a>
+          </div>
+        </div>
+        <div class="kontakt-item">
+          <div class="kontakt-icon-wrap">✉️</div>
+          <div>
+            <div class="kontakt-item-label">Email</div>
+            <a href="/cdn-cgi/l/email-protection#dcb3acb5bfb5f2b9a4acaeb9af9cbbb1bdb5b0f2bfb3b1" class="kontakt-item-value"><span class="__cf_email__" data-cfemail="bfd0cfd6dcd691dac7cfcddaccffd8d2ded6d391dcd0d2">[email&#160;protected]</span></a>
+          </div>
+        </div>
+        <div class="kontakt-item">
+          <div class="kontakt-icon-wrap">📍</div>
+          <div>
+            <div class="kontakt-item-label">Lokalita</div>
+            <span class="kontakt-item-value">Opava & okolí</span>
+          </div>
+        </div>
+        <div class="kontakt-item">
+          <div class="kontakt-icon-wrap">🕐</div>
+          <div>
+            <div class="kontakt-item-label">Dostupnost</div>
+            <span class="kontakt-item-value">Po–Ne, termín dohodou</span>
+          </div>
+        </div>
+      </div>
+      <form class="kontakt-form" action="https://formspree.io/f/mqegzajj" method="POST">
+        <div class="form-title">Nezávazná poptávka</div>
+        <div class="form-group">
+          <label>Vaše jméno</label>
+          <input type="text" name="jmeno" placeholder="Jan Novák" required>
+        </div>
+        <div class="form-group">
+          <label>Telefon</label>
+          <input type="tel" name="telefon" placeholder="777 123 456" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="vas@email.cz">
+        </div>
+        <div class="form-group">
+          <label>Co potřebujete vyčistit?</label>
+          <select name="sluzba" required>
+            <option value="">Vyberte službu...</option>
+            <option>Sedačka / pohovka</option>
+            <option>Koberec</option>
+            <option>Autosedačky & interiér</option>
+            <option>Více věcí najednou</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Zpráva (nepovinné)</label>
+          <textarea name="zprava" placeholder="Popište co potřebujete, lokalitu, preferovaný termín..."></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Nová poptávka — Opičí Expres 🐒">
+        <input type="hidden" name="_next" value="https://opiciexpres.github.io/opiciexpres">
+        <button type="submit" class="form-submit">
+          🐒 Odeslat poptávku
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <strong>Opičí Expres</strong> — Profi tepování Opava & okolí</p>
+  <p style="margin-top:0.5rem">Žádné opičárny. Suché do hodiny. 🍌</p>
+</footer>
+
+<!-- FLOATING BTNS -->
+<div class="floating-cta">
+  <a href="https://instagram.com/opici_expres" target="_blank" class="float-btn
