@@ -31,7 +31,7 @@
   }
 
   /* Světlé sekce izolují banány — neprosvítají přes ně */
-  #sluzby, #vyhody, #cenik, #galerie, .usp-strip, nav, footer, #ig-banner {
+  #sluzby, #vyhody, #cenik, #galerie, .usp-strip, nav, footer {
     isolation: isolate;
     position: relative;
     z-index: 3;
@@ -926,29 +926,6 @@ window.addEventListener('load', function() { window.scrollTo(0, 0); });
 </nav>
 
 
-<!-- IG BANNER -->
-<div id="ig-banner" style="background:#0A2208; padding:1.5rem 2rem; border-bottom:3px solid #F5D020; position:relative; z-index:99; width:100%; box-sizing:border-box;">
-  <div style="max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap;">
-    <div style="display:flex; align-items:center; gap:1.2rem;">
-      <img src="logo.png" alt="Opičí Expres" style="width:60px; height:60px; object-fit:contain;">
-      <div>
-        <div style="font-family:sans-serif; font-size:0.75rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:2px; margin-bottom:0.2rem;">Sleduj nás na Instagramu</div>
-        <div style="font-family:sans-serif; font-size:1.4rem; font-weight:700; color:#F5D020; letter-spacing:1px;">@opici.expres</div>
-        <div style="font-family:sans-serif; font-size:0.8rem; color:rgba(255,255,255,0.6); margin-top:0.2rem;">Fotky před/po · Novinky · Akce</div>
-      </div>
-    </div>
-    <div style="display:flex; align-items:center; gap:2rem; flex-wrap:wrap;">
-      <div style="text-align:center;">
-        <img src="qr.png" alt="QR kód Instagram" style="width:90px; height:90px; border-radius:8px; border:3px solid #F5D020;">
-        <div style="font-family:sans-serif; font-size:0.7rem; color:rgba(255,255,255,0.5); margin-top:0.3rem;">Naskenuj a sleduj</div>
-      </div>
-      <a href="https://instagram.com/opici.expres" target="_blank" style="background:#F5D020; color:#0A2208; padding:0.9rem 1.8rem; border-radius:6px; font-family:sans-serif; font-size:1rem; font-weight:700; text-decoration:none; text-transform:uppercase; letter-spacing:1px; display:inline-flex; align-items:center; gap:0.5rem; transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-        📸 Sledovat na IG
-      </a>
-    </div>
-  </div>
-</div>
-
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg-pattern"></div>
@@ -978,6 +955,17 @@ window.addEventListener('load', function() { window.scrollTo(0, 0); });
         <div class="stat-num">7/7</div>
         <div class="stat-label">Dní v týdnu</div>
       </div>
+    </div>
+
+    <!-- IG STRIP inside hero -->
+    <div style="margin-top:2rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;">
+      <img src="logo.png" alt="Opičí Expres" style="width:48px; height:48px; object-fit:contain;">
+      <div>
+        <div style="font-size:1.1rem; font-weight:700; color:var(--yellow);">@opici.expres</div>
+        <div style="font-size:0.8rem; color:rgba(255,255,255,0.5);">Fotky před/po · Novinky · Akce</div>
+      </div>
+      <img src="qr.png" alt="QR Instagram" style="width:72px; height:72px; border-radius:8px; border:2px solid var(--yellow);">
+      <a href="https://instagram.com/opici.expres" target="_blank" style="background:var(--yellow); color:var(--black); padding:0.7rem 1.4rem; border-radius:6px; font-weight:700; font-size:0.9rem; text-decoration:none; text-transform:uppercase; letter-spacing:1px;">📸 Sledovat na IG</a>
     </div>
   </div>
   <div class="hero-right">
