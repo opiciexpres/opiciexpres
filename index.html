@@ -3,376 +3,687 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Opičí Expres — Profi tepování Opava</title>
-<meta name="description" content="Profesionální tepování sedaček, koberců a autosedaček v Opavě. Suché do 1 hodiny.">
+<title>Opičí Expres — Profi tepování Opava · Ostrava</title>
+<meta name="description" content="Profesionální tepování sedaček, koberců a autosedaček. Opava · Ostrava a okolí. Suché do 1 hodiny.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --yellow:#F5D020;
-  --yellow-d:#D4A800;
-  --green:#2A8A14;
-  --green-l:#3AAA20;
-  --green-d:#1A5A0A;
-  --white:#ffffff;
-  --gray:#F7F9F5;
-  --gray2:#EEF3EB;
-  --text:#1A2E10;
-  --text2:#4A6A3A;
-  --text3:#7A9A6A;
+  --y:#F5D020;--yd:#D4A800;
+  --g:#2A8A14;--gl:#3AAA20;--gd:#1A5A0A;
+  --dark:#0A2208;
+  --w:#fff;--bg:#F7F9F5;--bg2:#EEF3EB;--bg3:#D5DDC8;
+  --t:#1A2E10;--t2:#4A6A3A;--t3:#7A9A6A;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Nunito',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden}
+body{font-family:'Nunito',sans-serif;background:var(--w);color:var(--t);overflow-x:hidden}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-bottom:2px solid var(--gray2);padding:0 2rem;height:68px;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{display:flex;align-items:center;gap:0.8rem;text-decoration:none}
-.nav-logo img{width:44px;height:44px;object-fit:contain}
-.nav-logo span{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--green);letter-spacing:1px}
-.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center}
-.nav-links a{color:var(--text2);text-decoration:none;font-size:0.9rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;transition:color 0.2s}
-.nav-links a:hover{color:var(--green)}
-.nav-cta{background:var(--yellow)!important;color:var(--text)!important;padding:0.5rem 1.2rem;border-radius:6px}
-.nav-hrasek{display:flex;align-items:center;gap:4px;opacity:0.45;cursor:default}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-bottom:2px solid var(--bg2);padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nl{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.nl img{width:40px;height:40px;object-fit:contain}
+.nl span{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--g);letter-spacing:1px}
+.nm{display:flex;gap:1.3rem;list-style:none;align-items:center}
+.nm a{color:var(--t2);text-decoration:none;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;transition:color .2s}
+.nm a:hover{color:var(--g)}
+.nm .cta{background:var(--y);color:var(--t);padding:.45rem 1rem;border-radius:6px}
+.pea{display:flex;align-items:center;gap:4px;opacity:.4;cursor:default;font-size:.6rem;color:var(--g);font-style:italic}
 
-#hero{min-height:100vh;padding-top:68px;background:var(--white);display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(58,170,32,0.06) 0%,transparent 70%);pointer-events:none}
-.hero-left{padding:4rem 2rem 4rem 4rem;position:relative;z-index:1}
-.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;background:var(--gray2);color:var(--green);font-size:0.8rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:0.4rem 1rem;border-radius:20px;margin-bottom:1.5rem;animation:fadeUp 0.5s ease both}
-.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,7vw,6rem);line-height:0.95;letter-spacing:1px;margin-bottom:1rem;animation:fadeUp 0.5s 0.1s ease both}
-.hero-title .y{color:var(--yellow-d)}
-.hero-title .g{color:var(--green)}
-.hero-claim{font-size:1.1rem;font-weight:800;color:var(--green);margin-bottom:0.8rem;animation:fadeUp 0.5s 0.2s ease both}
-.hero-sub{font-size:1rem;color:var(--text2);line-height:1.7;max-width:440px;margin-bottom:2rem;animation:fadeUp 0.5s 0.3s ease both}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.5s 0.4s ease both}
-.btn-primary{background:var(--green);color:white;padding:1rem 2rem;border-radius:8px;font-family:'Nunito',sans-serif;font-size:1rem;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;transition:transform 0.2s,background 0.2s}
-.btn-primary:hover{background:var(--green-d);transform:translateY(-2px)}
-.btn-secondary{background:transparent;color:var(--green);padding:1rem 2rem;border-radius:8px;font-family:'Nunito',sans-serif;font-size:1rem;font-weight:800;text-decoration:none;border:2px solid var(--green);display:inline-flex;align-items:center;gap:0.5rem;transition:transform 0.2s,background 0.2s}
-.btn-secondary:hover{background:var(--gray2);transform:translateY(-2px)}
-.hero-right{display:flex;align-items:center;justify-content:center;padding:4rem 4rem 4rem 2rem;position:relative;z-index:1}
-.hero-logo-wrap{position:relative;animation:floatUp 3s ease-in-out infinite}
-.hero-logo-wrap img{width:380px;max-width:100%;filter:drop-shadow(0 20px 40px rgba(42,138,20,0.12))}
+/* HERO */
+#hero{min-height:100vh;padding-top:64px;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(58,170,32,.06) 0%,transparent 70%);pointer-events:none}
+.hl{padding:4rem 2rem 4rem 4rem;position:relative;z-index:1}
+.htag{display:inline-flex;align-items:center;gap:.5rem;background:var(--bg2);color:var(--g);font-size:.78rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:.4rem 1rem;border-radius:20px;margin-bottom:1.5rem;animation:fu .5s ease both}
+.ht{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,7vw,6rem);line-height:.95;letter-spacing:1px;margin-bottom:1rem;animation:fu .5s .1s ease both}
+.ht .y{color:var(--yd)}.ht .g{color:var(--g)}
+.hcl{font-size:1.1rem;font-weight:800;color:var(--g);margin-bottom:.8rem;animation:fu .5s .2s ease both}
+.hsu{font-size:1rem;color:var(--t2);line-height:1.7;max-width:440px;margin-bottom:2rem;animation:fu .5s .3s ease both}
+.hbtns{display:flex;gap:1rem;flex-wrap:wrap;animation:fu .5s .4s ease both}
+.hr{display:flex;align-items:center;justify-content:center;padding:2rem 4rem 2rem 2rem;position:relative;z-index:1}
+.hr img{width:380px;max-width:100%;filter:drop-shadow(0 20px 40px rgba(42,138,20,.12));animation:fl 3s ease-in-out infinite}
 
-.usp-strip{background:var(--green);padding:1.5rem 2rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
-.usp-item{display:flex;align-items:center;gap:0.8rem;color:white}
-.usp-icon{font-size:1.4rem}
-.usp-text strong{display:block;font-size:0.95rem;font-weight:800}
-.usp-text span{font-size:0.78rem;opacity:0.75}
+/* BTNS */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.8rem;border-radius:8px;font-family:'Nunito',sans-serif;font-size:.95rem;font-weight:800;text-decoration:none;transition:transform .2s,background .2s;cursor:pointer;border:none}
+.btn:hover{transform:translateY(-2px)}
+.bg{background:var(--g);color:white}.bg:hover{background:var(--gd)}
+.bo{background:transparent;color:var(--g);border:2px solid var(--g)}.bo:hover{background:var(--bg2)}
+.by{background:var(--y);color:var(--t);box-shadow:0 4px 16px rgba(245,208,32,.3)}.by:hover{background:var(--yd)}
+.bw{background:transparent;color:white;border:2px solid rgba(255,255,255,.4)}.bw:hover{background:rgba(255,255,255,.1)}
 
+/* USP */
+.usp{background:var(--g);padding:1.4rem 2rem;display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+.usp-i{display:flex;align-items:center;gap:.7rem;color:white}
+.usp-ic{font-size:1.3rem}
+.usp-t strong{display:block;font-size:.9rem;font-weight:800}
+.usp-t span{font-size:.75rem;opacity:.7}
+
+/* SECTIONS */
 section{padding:5rem 2rem}
-.container{max-width:1100px;margin:0 auto}
-.section-eyebrow{font-size:0.75rem;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:var(--green);margin-bottom:0.6rem}
-.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.2rem);line-height:1;letter-spacing:1px;margin-bottom:0.8rem}
-.section-sub{font-size:1rem;color:var(--text2);line-height:1.7;max-width:520px}
+.con{max-width:1100px;margin:0 auto}
+.eye{font-size:.72rem;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:var(--g);margin-bottom:.5rem}
+.stit{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3.2rem);line-height:1;letter-spacing:1px;margin-bottom:.8rem}
+.ssub{font-size:1rem;color:var(--t2);line-height:1.7;max-width:520px}
 
-#sluzby{background:var(--gray)}
-.sluzby-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
-.sluzby-card{background:white;border-radius:16px;padding:2rem;border:2px solid var(--gray2);transition:border-color 0.3s,transform 0.3s,box-shadow 0.3s;position:relative;overflow:hidden;text-align:center}
-.sluzby-card:hover{border-color:var(--green);transform:translateY(-6px);box-shadow:0 20px 40px rgba(42,138,20,0.1)}
-.sluzby-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--green);transform:scaleX(0);transition:transform 0.3s}
-.sluzby-card:hover::after{transform:scaleX(1)}
-.sluzby-icon{font-size:2.5rem;margin-bottom:1rem;display:block}
-.sluzby-name{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:1px;margin-bottom:0.5rem}
-.sluzby-desc{font-size:0.88rem;color:var(--text2);line-height:1.6;margin-bottom:1.2rem}
-.sluzby-price{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--green);line-height:1}
-.sluzby-unit{font-size:0.8rem;font-weight:800;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-top:0.2rem}
-.sluzby-note{font-size:0.75rem;color:var(--text3);margin-top:0.4rem;font-style:italic}
+/* SLUŽBY */
+#sluzby{background:var(--bg)}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.sc{background:white;border-radius:16px;padding:1.8rem;border:2px solid var(--bg2);transition:border-color .3s,transform .3s,box-shadow .3s;text-align:center;position:relative;overflow:hidden}
+.sc:hover{border-color:var(--g);transform:translateY(-4px);box-shadow:0 16px 36px rgba(42,138,20,.1)}
+.sc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--g);transform:scaleX(0);transition:transform .3s}
+.sc:hover::after{transform:scaleX(1)}
+.sc-ic{font-size:2.2rem;margin-bottom:.8rem;display:block}
+.sc-n{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:1px;margin-bottom:.4rem}
+.sc-d{font-size:.85rem;color:var(--t2);line-height:1.5;margin-bottom:1rem}
+.sc-p{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--g);line-height:1}
+.sc-p .od{font-size:1.1rem;color:var(--t3);vertical-align:middle}
+.sc-u{font-size:.78rem;font-weight:800;color:var(--t3);text-transform:uppercase;letter-spacing:1px;margin-top:.2rem}
+.sc-note{font-size:.72rem;color:var(--t3);margin-top:.3rem;font-style:italic}
+.sc-extra{margin-top:.7rem;padding-top:.7rem;border-top:1px solid var(--bg2);font-size:.8rem;color:var(--t2);line-height:1.7}
+.pdis{margin-top:1.8rem;text-align:center;padding:1rem 1.5rem;background:white;border-radius:12px;border:2px dashed var(--bg3);max-width:700px;margin-left:auto;margin-right:auto;font-size:.85rem;color:var(--t2);line-height:1.6}
+.pdis strong{color:var(--t)}
 
-#postup-vyhody{background:var(--white)}
-.pv-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem}
-.postup-steps{display:flex;flex-direction:column;gap:1.2rem}
-.postup-step{display:flex;gap:1rem;align-items:flex-start}
-.step-num{width:36px;height:36px;background:var(--green);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.1rem;flex-shrink:0;margin-top:2px}
-.step-title{font-weight:800;font-size:0.95rem;margin-bottom:0.2rem}
-.step-desc{font-size:0.85rem;color:var(--text2);line-height:1.5}
-.vyhody-list{display:flex;flex-direction:column;gap:1rem}
-.vyhoda{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem;border-radius:12px;background:var(--gray);border:1px solid var(--gray2);transition:border-color 0.2s}
-.vyhoda:hover{border-color:var(--green-l)}
-.vyhoda-icon{font-size:1.5rem;flex-shrink:0}
-.vyhoda-title{font-weight:800;font-size:0.9rem;margin-bottom:0.2rem}
-.vyhoda-desc{font-size:0.82rem;color:var(--text2);line-height:1.5}
+/* KALKULAČKA */
+#kalkulacka{background:var(--w)}
+.cw{max-width:620px;margin:0 auto}
+.cbox{background:linear-gradient(135deg,#fff,#f7faf3);border:2px solid var(--y);border-radius:20px;padding:2rem;box-shadow:0 4px 20px rgba(245,208,32,.15)}
+.crow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cf{margin-bottom:1rem}
+.cf label{display:block;font-size:.68rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);margin-bottom:.35rem}
+.cf select,.cf input{width:100%;background:white;border:1.5px solid var(--bg2);border-radius:10px;padding:.7rem .85rem;font-family:'Nunito',sans-serif;font-size:.92rem;font-weight:700;color:var(--t);outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none}
+.cf select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%232A8A14' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
+.cf input:focus,.cf select:focus{border-color:var(--g)}
+.cex{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1rem}
+.cchk{display:flex;align-items:center;gap:.5rem;background:white;border:1.5px solid var(--bg2);border-radius:8px;padding:.55rem .65rem;cursor:pointer;transition:all .18s;font-size:.76rem;font-weight:700;color:var(--t2);user-select:none}
+.cchk:hover{border-color:var(--gl)}
+.cchk.on{border-color:var(--g);background:#edfae7;color:var(--gd)}
+.cchk-b{width:17px;height:17px;border:2px solid var(--bg3);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:white;font-size:.65rem;color:white;font-weight:900}
+.cchk.on .cchk-b{background:var(--g);border-color:var(--g)}
+.cchk.on .cchk-b::after{content:'✓'}
+.cres{background:linear-gradient(135deg,var(--dark),#1a3a14);color:white;border-radius:14px;padding:1.3rem;margin-top:1.1rem;position:relative;overflow:hidden}
+.cres::before{content:'🐒';position:absolute;font-size:6rem;opacity:.07;top:-12px;right:-8px;transform:rotate(-12deg)}
+.cr-l{font-size:.68rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--y);position:relative;z-index:1}
+.cr-a{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:1px;line-height:1;margin:.3rem 0;position:relative;z-index:1}
+.cr-a .kc{font-size:1.4rem;color:var(--y);margin-left:.3rem}
+.cr-bd{font-size:.78rem;line-height:1.7;opacity:.85;border-top:1px solid rgba(255,255,255,.15);padding-top:.6rem;margin-top:.6rem;position:relative;z-index:1}
+.cr-bd .br{display:flex;justify-content:space-between;gap:.5rem}
+.cr-n{margin-top:.6rem;font-size:.72rem;color:rgba(255,255,255,.5);font-style:italic;position:relative;z-index:1}
+.ccta{text-align:center;margin-top:1.5rem}
+.ccta p{font-size:.85rem;color:var(--t2);margin-bottom:1rem;line-height:1.5}
 
-#ig-sekce{background:var(--green);padding:5rem 2rem}
-.ig-wrap{max-width:800px;margin:0 auto;text-align:center}
-.ig-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);color:white;letter-spacing:2px;margin-bottom:0.5rem}
-.ig-subtitle{font-size:1rem;color:rgba(255,255,255,0.7);margin-bottom:2.5rem}
-.ig-content{display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap}
-.ig-qr-big{width:160px;height:160px;border-radius:16px;border:4px solid var(--yellow);background:white;padding:8px;object-fit:contain}
-.ig-info{text-align:left}
-.ig-handle-big{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--yellow);letter-spacing:1px;margin-bottom:0.3rem}
-.ig-features{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.5rem}
-.ig-feature{display:flex;align-items:center;gap:0.5rem;color:rgba(255,255,255,0.85);font-size:0.9rem;font-weight:600}
-.ig-btn-big{background:var(--yellow);color:var(--text);padding:1rem 2.5rem;border-radius:8px;font-weight:800;font-size:1rem;text-decoration:none;text-transform:uppercase;letter-spacing:1px;display:inline-block;transition:transform 0.2s}
-.ig-btn-big:hover{transform:translateY(-2px)}
+/* POSTUP */
+#postup{background:var(--bg)}
+.pvg{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:2.5rem}
+.steps{display:flex;flex-direction:column;gap:1.1rem}
+.step{display:flex;gap:.9rem;align-items:flex-start}
+.sn{width:34px;height:34px;background:var(--g);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1rem;flex-shrink:0;margin-top:2px}
+.st{font-weight:800;font-size:.9rem;margin-bottom:.15rem}
+.sd{font-size:.82rem;color:var(--t2);line-height:1.5}
+.vl{display:flex;flex-direction:column;gap:.9rem}
+.vi{display:flex;align-items:flex-start;gap:.9rem;padding:1.1rem;border-radius:12px;background:white;border:1px solid var(--bg2);transition:border-color .2s}
+.vi:hover{border-color:var(--gl)}
+.vi-ic{font-size:1.4rem;flex-shrink:0}
+.vi-t{font-weight:800;font-size:.85rem;margin-bottom:.15rem}
+.vi-d{font-size:.8rem;color:var(--t2);line-height:1.5}
 
-#galerie{background:var(--gray)}
-.galerie-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
-.galerie-item{aspect-ratio:4/3;background:var(--gray2);border-radius:12px;border:2px dashed #ccc;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;color:#aaa;font-size:0.85rem;transition:border-color 0.2s}
-.galerie-item:hover{border-color:var(--green-l)}
-.galerie-note{text-align:center;margin-top:1.5rem;color:var(--text3);font-size:0.9rem}
+/* B2B */
+#b2b{background:var(--w)}
+.b2b-hero{background:linear-gradient(135deg,var(--dark),#1a3a14);border-radius:20px;padding:2.5rem;margin-top:2rem;position:relative;overflow:hidden;color:white}
+.b2b-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(245,208,32,.1),transparent 60%);pointer-events:none}
+.b2b-hero h3{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);color:var(--y);letter-spacing:2px;margin-bottom:.5rem;position:relative}
+.b2b-hero p{color:rgba(255,255,255,.8);font-size:.92rem;line-height:1.7;max-width:500px;position:relative}
+.b2bg{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2rem}
+.b2bc{background:var(--bg);border-radius:16px;padding:1.6rem;border:2px solid var(--bg2);transition:border-color .3s}
+.b2bc:hover{border-color:var(--g)}
+.b2bc-ic{font-size:1.8rem;margin-bottom:.6rem;display:block}
+.b2bc-n{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:1px;margin-bottom:.3rem}
+.b2bc-d{font-size:.82rem;color:var(--t2);line-height:1.5;margin-bottom:.8rem}
+.b2bc-p{font-size:.8rem;color:var(--t2);line-height:1.8}
+.b2bc-p strong{color:var(--g)}
+.b2b-arg{margin-top:2rem;background:#edfae7;border-radius:16px;padding:1.5rem;border-left:4px solid var(--g)}
+.b2b-arg-t{font-weight:800;font-size:.92rem;margin-bottom:.5rem;color:var(--gd)}
+.b2b-arg p{font-size:.85rem;color:var(--t2);line-height:1.6}
 
-#kontakt{background:var(--white)}
-.kontakt-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem;align-items:start}
-.kontakt-info{display:flex;flex-direction:column;gap:1.2rem}
-.kontakt-item{display:flex;align-items:center;gap:1rem}
-.k-icon{width:48px;height:48px;background:var(--gray);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.k-label{font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--text3);margin-bottom:0.2rem}
-.k-value{font-size:1rem;font-weight:700;color:var(--text);text-decoration:none;transition:color 0.2s}
-.k-value:hover{color:var(--green)}
-.kontakt-form{background:var(--gray);border-radius:16px;padding:2rem;border:1px solid var(--gray2)}
-.form-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--green);letter-spacing:1px;margin-bottom:1.5rem}
-.form-group{margin-bottom:1rem}
-.form-group label{display:block;font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text3);margin-bottom:0.4rem}
-.form-group input,.form-group textarea,.form-group select{width:100%;background:white;border:2px solid var(--gray2);border-radius:8px;padding:0.8rem 1rem;font-family:'Nunito',sans-serif;font-size:0.95rem;color:var(--text);outline:none;transition:border-color 0.2s}
-.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--green)}
-.form-group textarea{resize:vertical;min-height:90px}
-.form-submit{width:100%;background:var(--green);color:white;border:none;padding:1rem;font-family:'Nunito',sans-serif;font-size:1rem;font-weight:800;border-radius:8px;cursor:pointer;transition:background 0.2s,transform 0.2s;margin-top:0.5rem}
-.form-submit:hover{background:var(--green-d);transform:translateY(-1px)}
+/* GALERIE */
+#galerie{background:var(--bg)}
+.gcat{margin-bottom:2.5rem}.gcat:last-of-type{margin-bottom:0}
+.gch{display:flex;align-items:center;gap:.8rem;margin-bottom:1rem}
+.gci{font-size:1.4rem}
+.gcn{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:1px}
+.gbdg{font-size:.65rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:.2rem .6rem;border-radius:10px;background:var(--g);color:white}
+.gbdg.soon{background:var(--bg2);color:var(--t3)}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+.gi{aspect-ratio:4/3;background:var(--bg2);border-radius:12px;border:2px solid var(--bg2);overflow:hidden;position:relative;transition:border-color .2s,transform .2s}
+.gi:hover{border-color:var(--gl);transform:translateY(-2px)}
+.gi img{width:100%;height:100%;object-fit:cover}
+.gi .gl{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(10,34,8,.85));color:white;padding:1.2rem .8rem .5rem;font-size:.76rem;font-weight:700}
+.gi-ph{border-style:dashed;border-color:#ccc;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;color:#aaa;font-size:.82rem}
+.gnote{text-align:center;margin-top:2rem;color:var(--t3);font-size:.88rem}
 
-footer{background:var(--text);color:rgba(255,255,255,0.5);text-align:center;padding:2rem;font-size:0.85rem}
-footer strong{color:var(--yellow)}
+/* REEL embed */
+.reel-wrap{margin-top:2rem;display:flex;justify-content:center}
+.reel-wrap iframe{border:none;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.1)}
 
-.floating-cta{position:fixed;bottom:2rem;right:2rem;z-index:50;display:flex;flex-direction:column;gap:0.8rem}
-.float-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,0.15);transition:transform 0.2s}
-.float-btn:hover{transform:scale(1.1)}
-.float-tel{background:var(--yellow)}
-.float-ig{background:var(--green)}
+/* IG */
+#ig{background:var(--g);padding:5rem 2rem}
+.igw{max-width:800px;margin:0 auto;text-align:center}
+.igt{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);color:white;letter-spacing:2px;margin-bottom:.5rem}
+.igs{font-size:1rem;color:rgba(255,255,255,.7);margin-bottom:2.5rem}
+.igc{display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap}
+.igq{width:150px;height:150px;border-radius:16px;border:4px solid var(--y);background:white;padding:8px;object-fit:contain}
+.igi{text-align:left}
+.igh{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--y);letter-spacing:1px;margin-bottom:.3rem}
+.igf{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.5rem}
+.igfi{display:flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.85);font-size:.88rem;font-weight:600}
 
-#bananas{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;opacity:0.5}
+/* KONTAKT */
+#kontakt{background:var(--w)}
+.kg{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2.5rem;align-items:start}
+.ki{display:flex;flex-direction:column;gap:1.1rem}
+.kit{display:flex;align-items:center;gap:1rem}
+.kic{width:46px;height:46px;background:var(--bg);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.kl{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:var(--t3);margin-bottom:.15rem}
+.kv{font-size:.95rem;font-weight:700;color:var(--t);text-decoration:none;transition:color .2s}
+.kv:hover{color:var(--g)}
+.kf{background:var(--bg);border-radius:16px;padding:1.8rem;border:1px solid var(--bg2)}
+.kft{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--g);letter-spacing:1px;margin-bottom:1.3rem}
+.fg{margin-bottom:.9rem}
+.fg label{display:block;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--t3);margin-bottom:.35rem}
+.fg input,.fg textarea,.fg select{width:100%;background:white;border:2px solid var(--bg2);border-radius:8px;padding:.75rem .9rem;font-family:'Nunito',sans-serif;font-size:.92rem;color:var(--t);outline:none;transition:border-color .2s}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--g)}
+.fg textarea{resize:vertical;min-height:75px}
+.fh{font-size:.75rem;color:var(--t3);margin-top:.3rem;font-style:italic}
+.fsub{width:100%;background:var(--g);color:white;border:none;padding:.9rem;font-family:'Nunito',sans-serif;font-size:.95rem;font-weight:800;border-radius:8px;cursor:pointer;transition:background .2s,transform .2s;margin-top:.5rem}
+.fsub:hover{background:var(--gd);transform:translateY(-1px)}
 
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes floatUp{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-@keyframes floatBanana{0%{transform:translateY(-60px) rotate(0deg)}100%{transform:translateY(110vh) rotate(720deg)}}
+footer{background:var(--t);color:rgba(255,255,255,.5);text-align:center;padding:2rem;font-size:.82rem}
+footer strong{color:var(--y)}
+
+.fcta{position:fixed;bottom:2rem;right:2rem;z-index:50;display:flex;flex-direction:column;gap:.7rem}
+.fb{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.15);transition:transform .2s}
+.fb:hover{transform:scale(1.1)}
+.fbt{background:var(--y)}.fbi{background:var(--g)}
+
+#bananas{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;opacity:.5}
+
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes fb{0%{transform:translateY(-60px) rotate(0deg)}100%{transform:translateY(110vh) rotate(720deg)}}
 
 @media(max-width:768px){
   #hero{grid-template-columns:1fr;text-align:center}
-  .hero-left{padding:3rem 1.5rem 1rem}
-  .hero-right{padding:0 1.5rem 3rem}
-  .hero-logo-wrap img{width:260px}
-  .hero-btns{justify-content:center}
-  .sluzby-grid,.pv-grid,.kontakt-grid,.galerie-grid{grid-template-columns:1fr}
-  .ig-content{flex-direction:column;text-align:center}
-  .ig-info{text-align:center}
-  .nav-links{display:none}
+  .hl{padding:3rem 1.5rem 1rem}.hr{padding:0 1.5rem 3rem}
+  .hr img{width:260px}
+  .hbtns{justify-content:center}
+  .sg,.pvg,.kg,.b2bg,.gg{grid-template-columns:1fr}
+  .igc{flex-direction:column;text-align:center}.igi{text-align:center}
+  .nm{display:none}
   section{padding:3.5rem 1.5rem}
-  .usp-strip{gap:1.2rem}
+  .usp{gap:1rem}
+  .crow,.cex{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <a href="#hero" class="nav-logo">
+  <a href="#hero" class="nl">
     <img src="logo.png" alt="Opičí Expres">
     <span>OPIČÍ EXPRES</span>
   </a>
-  <ul class="nav-links">
-    <li><a href="#sluzby">Služby</a></li>
-    <li><a href="#postup-vyhody">Postup</a></li>
-    <li><a href="#ig-sekce">Instagram</a></li>
+  <ul class="nm">
+    <li><a href="#sluzby">Ceník</a></li>
+    <li><a href="#kalkulacka">Kalkulačka</a></li>
+    <li><a href="#b2b">Pro firmy</a></li>
     <li><a href="#galerie">Galerie</a></li>
-    <li><a href="#kontakt" class="nav-cta">Objednat</a></li>
+    <li><a href="#kontakt" class="cta">Objednat</a></li>
   </ul>
-  <div class="nav-hrasek">
-    <span style="font-size:1rem">🫛</span>
-    <span style="font-size:0.6rem;color:var(--green);font-style:italic">Láskuju!</span>
-  </div>
+  <div class="pea"><span style="font-size:1rem">🫛</span> Láskuju!</div>
 </nav>
 
+<!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
-  <div class="hero-left">
-    <div class="hero-tag">📍 Opava & okolí</div>
-    <h1 class="hero-title">
-      <span class="y">OPIČÍ</span><br>
-      <span class="g">EXPRES</span><br>
-      TEPOVÁNÍ
-    </h1>
-    <p class="hero-claim">Žádné opičárny. Suché do hodiny.</p>
-    <p class="hero-sub">Jmenuji se Dominik a říkají mi Opičák! Profi extraktor s vysokým sacím podtlakem + profesionální chemie = hloubkové čištění a sucho za 60 minut. Přijedu k vám domů.</p>
-    <div class="hero-btns">
-      <a href="#kontakt" class="btn-primary">🐒 Objednat čištění</a>
-      <a href="tel:734259525" class="btn-secondary">📞 734 259 525</a>
+  <div class="hl">
+    <div class="htag">📍 Opava · Ostrava a okolí</div>
+    <h1 class="ht"><span class="y">OPIČÍ</span><br><span class="g">EXPRES</span><br>TEPOVÁNÍ</h1>
+    <p class="hcl">Žádné opičárny. Jen čistá práce.</p>
+    <p class="hsu">Jmenuji se Dominik a říkají mi Opičák! Profi extraktor + profesionální chemie = hloubkové čištění a sucho za 60 minut. Přijedu k vám domů.</p>
+    <div class="hbtns">
+      <a href="#kontakt" class="btn bg">🐒 Objednat čištění</a>
+      <a href="tel:734259525" class="btn bo">📞 734 259 525</a>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-logo-wrap">
-      <img src="logo.png" alt="Opičí Expres">
-    </div>
+  <div class="hr">
+    <img src="logo.png" alt="Opičí Expres">
   </div>
 </section>
 
-<div class="usp-strip">
-  <div class="usp-item"><span class="usp-icon">⚙️</span><div class="usp-text"><strong>Profi extraktor</strong><span>Vysoký sací podtlak</span></div></div>
-  <div class="usp-item"><span class="usp-icon">🧪</span><div class="usp-text"><strong>Profi chemie</strong><span>4fázový postup</span></div></div>
-  <div class="usp-item"><span class="usp-icon">⚡</span><div class="usp-text"><strong>Suché do 1 hodiny</strong><span>Ne za půl dne</span></div></div>
-  <div class="usp-item"><span class="usp-icon">🏠</span><div class="usp-text"><strong>Přijedu k vám</strong><span>Bez nutnosti vozu</span></div></div>
-  <div class="usp-item"><span class="usp-icon">📅</span><div class="usp-text"><strong>Po–Ne</strong><span>Termín dohodou</span></div></div>
+<!-- USP -->
+<div class="usp">
+  <div class="usp-i"><span class="usp-ic">⚙️</span><div class="usp-t"><strong>Profi extraktor</strong><span>Vysoký sací podtlak</span></div></div>
+  <div class="usp-i"><span class="usp-ic">🧪</span><div class="usp-t"><strong>4fázový postup</strong><span>S pH oplachem</span></div></div>
+  <div class="usp-i"><span class="usp-ic">⚡</span><div class="usp-t"><strong>Suché do 1 hodiny</strong><span>Ne za půl dne</span></div></div>
+  <div class="usp-i"><span class="usp-ic">🏠</span><div class="usp-t"><strong>Přijedu k vám</strong><span>Opava · Ostrava</span></div></div>
+  <div class="usp-i"><span class="usp-ic">📅</span><div class="usp-t"><strong>Po–Ne</strong><span>Dohodou</span></div></div>
 </div>
 
+<!-- SLUŽBY & CENÍK -->
 <section id="sluzby">
-  <div class="container">
-    <p class="section-eyebrow">Co čistíme & kolik to stojí</p>
-    <h2 class="section-title">Služby & ceník</h2>
-    <p class="section-sub">Orientační ceny. Finální cena vždy na místě. Min. výjezd 800 Kč.</p>
-    <div class="sluzby-grid">
-      <div class="sluzby-card">
-        <span class="sluzby-icon">🛋️</span>
-        <div class="sluzby-name">Sedačky & pohovky</div>
-        <p class="sluzby-desc">Hloubkové čištění sedacích míst, opěrek a bočnic. Profi 4fázový postup.</p>
-        <div class="sluzby-price">500</div>
-        <div class="sluzby-unit">Kč / sedací místo</div>
-        <div class="sluzby-note">Trojsedák = 3 místa = 1 500 Kč</div>
+  <div class="con">
+    <p class="eye">Orientační ceník</p>
+    <h2 class="stit">Služby & ceny</h2>
+    <p class="ssub">Každý kus je jiný — cenu domluvíme individuálně. Pošlete fotku a do hodiny máte kalkulaci.</p>
+    <div class="sg">
+      <div class="sc">
+        <span class="sc-ic">🛋️</span>
+        <div class="sc-n">Sedačky & pohovky</div>
+        <p class="sc-d">Hloubkové čištění sedacích míst, opěrek, bočnic. I kombinace s kůží.</p>
+        <div class="sc-p"><span class="od">od </span>450</div>
+        <div class="sc-u">Kč / sedací místo</div>
+        <div class="sc-note">Materiál, velikost a znečištění ovlivňují cenu</div>
       </div>
-      <div class="sluzby-card">
-        <span class="sluzby-icon">🏠</span>
-        <div class="sluzby-name">Koberce & čalounění</div>
-        <p class="sluzby-desc">Extrakční čištění všech typů koberců. Předložky, běhouny, plošné koberce.</p>
-        <div class="sluzby-price">150</div>
-        <div class="sluzby-unit">Kč / m²</div>
-        <div class="sluzby-note">Obývák 15 m² = ~2 250 Kč</div>
+      <div class="sc">
+        <span class="sc-ic">🏠</span>
+        <div class="sc-n">Koberce</div>
+        <p class="sc-d">Extrakční čištění všech typů — průmyslové, designové, předložky, běhouny.</p>
+        <div class="sc-p"><span class="od">od </span>55</div>
+        <div class="sc-u">Kč / m²</div>
+        <div class="sc-extra">
+          Průmyslový — od 55 Kč/m²<br>
+          Koberec — od 90 Kč/m²<br>
+          Designový — od 125 Kč/m²
+        </div>
       </div>
-      <div class="sluzby-card">
-        <span class="sluzby-icon">🚗</span>
-        <div class="sluzby-name">Auto interiér</div>
-        <p class="sluzby-desc">Autosedačky, koberečky, čalounění. Suché do hodiny — hned jedete.</p>
-        <div class="sluzby-price">400</div>
-        <div class="sluzby-unit">Kč / sedačka</div>
-        <div class="sluzby-note">Celý interiér od 2 200 Kč</div>
+      <div class="sc">
+        <span class="sc-ic">🚗</span>
+        <div class="sc-n">Auto interiér</div>
+        <p class="sc-d">Sedačky, koberečky, kufr, čalounění. Suché do hodiny — hned jedete.</p>
+        <div class="sc-p"><span class="od">od </span>500</div>
+        <div class="sc-u">Kč / sedačka</div>
+        <div class="sc-note">Celý interiér individuálně dle vozidla</div>
+      </div>
+    </div>
+    <div class="pdis">
+      ⚠️ Ceny jsou <strong>čistě orientační</strong>. Každý kus je jiný — materiál, velikost, znečištění. <strong>Finální cenu vždy domluvíme individuálně.</strong><br>Minimální výjezd: <strong>800 Kč</strong>
+    </div>
+  </div>
+</section>
+
+<!-- KALKULAČKA -->
+<section id="kalkulacka">
+  <div class="con">
+    <p class="eye">Spočítejte si cenu</p>
+    <h2 class="stit">Cenová kalkulačka</h2>
+    <p class="ssub">Přibližný odhad ceny. Finální cenu vždy domluvíme po konzultaci.</p>
+    <div class="cw" style="margin-top:2rem">
+      <div class="cbox">
+        <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:1.2rem">
+          <span style="font-size:1.6rem">🧮</span>
+          <div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.5px">Rychlá kalkulačka</div>
+            <div style="font-size:.72rem;color:var(--t3);font-weight:700">Orientační cena — nezávazně</div>
+          </div>
+        </div>
+
+        <div class="cf">
+          <label>Co potřebujete vyčistit?</label>
+          <select id="c-type" onchange="recalc()">
+            <option value="sedacka">🛋️ Sedačka — sedací místa</option>
+            <option value="koberec-prum">🏠 Koberec průmyslový</option>
+            <option value="koberec">🏠 Koberec běžný</option>
+            <option value="koberec-design">🏠 Koberec designový</option>
+            <option value="auto-seat">🚗 Autosedačky</option>
+          </select>
+        </div>
+
+        <div class="crow">
+          <div class="cf">
+            <label id="c-qty-l">Počet sedacích míst</label>
+            <input type="number" id="c-qty" value="3" min="1" step="1" oninput="recalc()">
+          </div>
+          <div class="cf">
+            <label>Stav znečištění</label>
+            <select id="c-state" onchange="recalc()">
+              <option value="1">Běžné</option>
+              <option value="1.3">Střední (skvrny, pach)</option>
+              <option value="1.6">Silné (hodně skvrn)</option>
+              <option value="2">Extrémní (roky neudržované)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="cf">
+          <label>Doplňky</label>
+          <div class="cex">
+            <div class="cchk" onclick="tg(this,'pets')"><div class="cchk-b"></div>🐾 Domácí mazlíčci</div>
+            <div class="cchk" onclick="tg(this,'impreg')"><div class="cchk-b"></div>✨ Impregnace</div>
+            <div class="cchk" onclick="tg(this,'deo')"><div class="cchk-b"></div>🌿 Dezodorace</div>
+            <div class="cchk" onclick="tg(this,'suv')"><div class="cchk-b"></div>🚙 SUV / dodávka</div>
+          </div>
+        </div>
+
+        <div class="cres" id="cres">
+          <div class="cr-l">Orientační cena</div>
+          <div class="cr-a"><span id="r-num">0</span><span class="kc">Kč</span></div>
+          <div class="cr-bd" id="r-break"></div>
+          <div class="cr-n">* Cena je orientační. Finální cenu domluvíme po konzultaci.</div>
+        </div>
+      </div>
+
+      <div class="ccta">
+        <p>📸 <strong>Chcete přesnou cenu?</strong> Pošlete fotku na Instagram — kalkulace do hodiny!</p>
+        <div style="display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap">
+          <a href="https://instagram.com/opici.expres" target="_blank" class="btn by">📸 Poslat na Instagram</a>
+          <a href="tel:734259525" class="btn bo">📞 734 259 525</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="postup-vyhody">
-  <div class="container">
-    <div class="pv-grid">
+<!-- POSTUP + VÝHODY -->
+<section id="postup">
+  <div class="con">
+    <div class="pvg">
       <div>
-        <p class="section-eyebrow">Jak pracujeme</p>
-        <h2 class="section-title">Správný postup</h2>
-        <p class="section-sub" style="margin-bottom:2rem">4 kroky které zaručí čistý a bezpečný výsledek.</p>
-        <div class="postup-steps">
-          <div class="postup-step"><div class="step-num">1</div><div><div class="step-title">Odmašťovač + kartáčování</div><div class="step-desc">Naneseme odmašťovač, kartáčem uvolníme vlákna do hloubky.</div></div></div>
-          <div class="postup-step"><div class="step-num">2</div><div><div class="step-title">Hloubkové tepování</div><div class="step-desc">Profi extraktorem s vysokým podtlakem vytáhneme veškerou nečistotu.</div></div></div>
-          <div class="postup-step"><div class="step-num">3</div><div><div class="step-title">pH neutrální oplach</div><div class="step-desc">Oplach odstraní zbytky chemie — žádná lepivost, žádné zbytky.</div></div></div>
-          <div class="postup-step"><div class="step-num">4</div><div><div class="step-title">Ošetření (volitelně)</div><div class="step-desc">Impregnace proti budoucímu zašpinění +350 Kč.</div></div></div>
+        <p class="eye">Jak pracujeme</p>
+        <h2 class="stit">4fázový postup</h2>
+        <div class="steps" style="margin-top:1.5rem">
+          <div class="step"><div class="sn">1</div><div><div class="st">Odmašťovač + kartáčování</div><div class="sd">Naneseme odmašťovač, kartáčem uvolníme vlákna do hloubky.</div></div></div>
+          <div class="step"><div class="sn">2</div><div><div class="st">Hloubkové tepování</div><div class="sd">Profi extraktorem s vysokým podtlakem vytáhneme veškerou nečistotu.</div></div></div>
+          <div class="step"><div class="sn">3</div><div><div class="st">pH neutrální oplach</div><div class="sd">Odstraní zbytky chemie — žádná lepivost, žádné zbytky.</div></div></div>
+          <div class="step"><div class="sn">4</div><div><div class="st">Ošetření (volitelně)</div><div class="sd">Impregnace proti budoucímu zašpinění — cena dle domluvy.</div></div></div>
         </div>
       </div>
       <div>
-        <p class="section-eyebrow">Proč já</p>
-        <h2 class="section-title">Moje výhody</h2>
-        <p class="section-sub" style="margin-bottom:2rem">Co mě odlišuje od konkurence.</p>
-        <div class="vyhody-list">
-          <div class="vyhoda"><span class="vyhoda-icon">⚡</span><div><div class="vyhoda-title">Suché do 1 hodiny</div><div class="vyhoda-desc">Vysoký sací podtlak = nečekáte přes noc. Za hodinu sedíte na gauči.</div></div></div>
-          <div class="vyhoda"><span class="vyhoda-icon">🏠</span><div><div class="vyhoda-title">Přijedu k vám domů</div><div class="vyhoda-desc">Nemusíte nic vozit. Přijedu, vyčistím, odjedu.</div></div></div>
-          <div class="vyhoda"><span class="vyhoda-icon">🧪</span><div><div class="vyhoda-title">Profi chemie & vybavení</div><div class="vyhoda-desc">Profesionální přípravky jako velké firmy.</div></div></div>
-          <div class="vyhoda"><span class="vyhoda-icon">🐾</span><div><div class="vyhoda-title">Bezpečné pro alergiky</div><div class="vyhoda-desc">Odstraníme roztoče, chlupy a alergeny z hloubky vláken.</div></div></div>
-          <div class="vyhoda"><span class="vyhoda-icon">📅</span><div><div class="vyhoda-title">Flexibilní termíny</div><div class="vyhoda-desc">Pracuji i o sobotách a nedělích. Domluvíme se.</div></div></div>
+        <p class="eye">Proč Opičí Expres</p>
+        <h2 class="stit">Moje výhody</h2>
+        <div class="vl" style="margin-top:1.5rem">
+          <div class="vi"><span class="vi-ic">⚡</span><div><div class="vi-t">Suché do 1 hodiny</div><div class="vi-d">Vysoký sací podtlak = nečekáte přes noc.</div></div></div>
+          <div class="vi"><span class="vi-ic">🏠</span><div><div class="vi-t">Přijedu k vám</div><div class="vi-d">Opava, Ostrava a okolí. Včetně víkendů.</div></div></div>
+          <div class="vi"><span class="vi-ic">🧪</span><div><div class="vi-t">Profi chemie & vybavení</div><div class="vi-d">Profesionální přípravky + pH oplach.</div></div></div>
+          <div class="vi"><span class="vi-ic">🐾</span><div><div class="vi-t">Bezpečné pro alergiky</div><div class="vi-d">Roztoče, chlupy a alergeny z hloubky vláken.</div></div></div>
+          <div class="vi"><span class="vi-ic">💰</span><div><div class="vi-t">Férová cena dle domluvy</div><div class="vi-d">Platíte za to, co skutečně potřebujete.</div></div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="ig-sekce">
-  <div class="ig-wrap">
-    <h2 class="ig-title">SLEDUJ NÁS NA INSTAGRAMU</h2>
-    <p class="ig-subtitle">Fotky před/po, novinky, tipy na čištění a zákulisí práce</p>
-    <div class="ig-content">
-      <img src="qr.png" alt="QR Instagram" class="ig-qr-big">
-      <div class="ig-info">
-        <div class="ig-handle-big">@opici.expres</div>
-        <div class="ig-features">
-          <div class="ig-feature">📸 Fotky před a po čištění</div>
-          <div class="ig-feature">🎥 Videa z práce v terénu</div>
-          <div class="ig-feature">🐒 Zákulisí Opičího Expresu</div>
-          <div class="ig-feature">🎁 Akce a slevy pro sledující</div>
+<!-- B2B -->
+<section id="b2b">
+  <div class="con">
+    <p class="eye">Pro firmy & provozovny</p>
+    <h2 class="stit">B2B spolupráce</h2>
+    <p class="ssub">Pravidelné čištění pro kavárny, kanceláře, hotely a autoservisy. Suché do hodiny = nemusíte zavírat.</p>
+
+    <div class="b2b-hero">
+      <h3>☕ KAVÁRNO, NEMUSÍŠ ZAVÍRAT!</h3>
+      <p>Tepování ráno před otevřením — v 11:00 zákazníci sedí na čistém. Konkurence vám zavře provoz na půl dne. My ne.</p>
+    </div>
+
+    <div class="b2bg">
+      <div class="b2bc">
+        <span class="b2bc-ic">☕</span>
+        <div class="b2bc-n">Kavárny & restaurace</div>
+        <div class="b2bc-d">Ušáky, designové sedačky, židle, pohovky pro hosty.</div>
+        <div class="b2bc-p">
+          ✅ Sucho do hodiny — <strong>nemusíte zavírat</strong><br>
+          ✅ Práce ráno před otevřením — <strong>+0 Kč</strong><br>
+          ✅ Pravidelný výjezd každé 3 měsíce<br>
+          ✅ Nižší B2B ceny oproti jednorázovce
         </div>
-        <a href="https://instagram.com/opici.expres" target="_blank" class="ig-btn-big">📸 Sledovat na Instagramu</a>
       </div>
+      <div class="b2bc">
+        <span class="b2bc-ic">🏢</span>
+        <div class="b2bc-n">Kanceláře & firmy</div>
+        <div class="b2bc-d">Kancelářské židle, koberce, sedačky v čekárně.</div>
+        <div class="b2bc-p">
+          ✅ Množstevní ceny od 5 kusů<br>
+          ✅ Čistá čekárna = <strong>lepší dojem na klienty</strong><br>
+          ✅ Flexibilní termíny i o víkendech<br>
+          ✅ Fakturace na IČO
+        </div>
+      </div>
+      <div class="b2bc">
+        <span class="b2bc-ic">🏨</span>
+        <div class="b2bc-n">Ubytování</div>
+        <div class="b2bc-d">Hotely, penziony, Airbnb — matrace, koberce, sedačky, čalounění.</div>
+        <div class="b2bc-p">
+          ✅ Matrace, koberce, sedačky — <strong>vše na jednom místě</strong><br>
+          ✅ Rychlé schnutí = pokoj <strong>hned k dispozici</strong><br>
+          ✅ Pravidelná hygiena pro lepší recenze<br>
+          ✅ Ideální mezi turnusy hostů
+        </div>
+      </div>
+      <div class="b2bc">
+        <span class="b2bc-ic">🚗</span>
+        <div class="b2bc-n">Auto interiéry</div>
+        <div class="b2bc-d">Autosedačky a kompletní čištění interiérů vozidel.</div>
+        <div class="b2bc-p">
+          ✅ Sucho do hodiny — <strong>auto hned k použití</strong><br>
+          ✅ Přijedu k vám / na vaše parkoviště<br>
+          ✅ Výhodné ceny při více vozidlech<br>
+          ✅ Osobní i firemní vozy
+        </div>
+      </div>
+    </div>
+
+    <div class="b2b-arg">
+      <div class="b2b-arg-t">🎁 Věrnostní program pro firmy</div>
+      <p><strong>B2B ceny vždy výhodnější</strong> než jednorázové — domluvíme individuálně.<br>
+      <strong>Každý 6. výjezd = sleva 30 %</strong> — čím víc tepujete, tím víc šetříte.<br>
+      <strong>Prioritní termíny</strong> — havárie nebo nečekané znečištění vyřešíme do 24 hodin.</p>
+    </div>
+
+    <div style="text-align:center;margin-top:2rem">
+      <a href="#kontakt" class="btn bg">🏢 Nezávazná poptávka pro firmy</a>
     </div>
   </div>
 </section>
 
+<!-- GALERIE -->
 <section id="galerie">
-  <div class="container">
-    <p class="section-eyebrow">Naše práce</p>
-    <h2 class="section-title">Fotogalerie před / po</h2>
-    <p class="section-sub">Výsledky mluví za vše. Fotky přidáváme průběžně na Instagram.</p>
-    <div class="galerie-grid">
-      <div class="galerie-item"><span style="font-size:2rem">📸</span><span>Sedačka před/po</span></div>
-      <div class="galerie-item"><span style="font-size:2rem">📸</span><span>Koberec před/po</span></div>
-      <div class="galerie-item"><span style="font-size:2rem">📸</span><span>Auto interiér</span></div>
-      <div class="galerie-item"><span style="font-size:2rem">📸</span><span>Rohová souprava</span></div>
-      <div class="galerie-item"><span style="font-size:2rem">📸</span><span>Autosedačky</span></div>
-      <div class="galerie-item"><span style="font-size:2rem">📸</span><span>Čalounění</span></div>
+  <div class="con">
+    <p class="eye">Naše práce</p>
+    <h2 class="stit">Galerie před / po</h2>
+    <p class="ssub">Výsledky mluví za vše. Průběžně přidáváme nové realizace.</p>
+
+    <div class="gcat" style="margin-top:2rem">
+      <div class="gch">
+        <span class="gci">🚗</span>
+        <span class="gcn">Auto interiér</span>
+        <span class="gbdg">7 fotek</span>
+      </div>
+      <div class="gg">
+        <div class="gi"><img src="web-foto-audi-pred.jpg" alt="Autosedačka před čištěním"><div class="gl">Autosedačka Audi — PŘED</div></div>
+        <div class="gi"><img src="web-foto-audi-po.jpg" alt="Autosedačka po čištění"><div class="gl">Autosedačka Audi — PO ✨</div></div>
+        <div class="gi"><img src="web-foto-sedacka-proces.jpg" alt="Broušená kůže napůl vytepovaná"><div class="gl">Kůže napůl vytepovaná — proces</div></div>
+        <div class="gi"><img src="web-foto-kufr-pred.jpg" alt="Kufr před čištěním"><div class="gl">Kufr SUV — PŘED</div></div>
+        <div class="gi"><img src="web-foto-kufr-po.jpg" alt="Kufr po čištění"><div class="gl">Kufr SUV — PO ✨</div></div>
+        <div class="gi"><img src="web-foto-kufr-proces.jpg" alt="Kufr napůl vytepovaný"><div class="gl">Kufr napůl — proces</div></div>
+      </div>
     </div>
-    <p class="galerie-note">📸 Sleduj <strong>@opici.expres</strong> na Instagramu — tam přidáváme novinky průběžně!</p>
+
+    <div class="gcat">
+      <div class="gch">
+        <span class="gci">🏠</span>
+        <span class="gcn">Koberce</span>
+        <span class="gbdg">1 fotka</span>
+      </div>
+      <div class="gg">
+        <div class="gi"><img src="web-foto-koberec-proces.jpg" alt="Koberec napůl vytepovaný"><div class="gl">Designový koberec — napůl vytepovaný</div></div>
+        <div class="gi gi-ph"><span style="font-size:1.8rem">🛋️</span><span>Brzy přidáme...</span></div>
+        <div class="gi gi-ph"><span style="font-size:1.8rem">📸</span><span>Brzy přidáme...</span></div>
+      </div>
+    </div>
+
+    <div class="gcat">
+      <div class="gch">
+        <span class="gci">🛋️</span>
+        <span class="gcn">Sedačky & pohovky</span>
+        <span class="gbdg soon">Brzy přidáme</span>
+      </div>
+      <div class="gg">
+        <div class="gi gi-ph"><span style="font-size:1.8rem">🛋️</span><span>Připravujeme...</span></div>
+        <div class="gi gi-ph"><span style="font-size:1.8rem">🛋️</span><span>Připravujeme...</span></div>
+        <div class="gi gi-ph"><span style="font-size:1.8rem">📸</span><span>Připravujeme...</span></div>
+      </div>
+    </div>
+
+    <!-- IG REEL embed -->
+    <div style="text-align:center;margin-top:2.5rem">
+      <p class="eye">Video z práce</p>
+      <h3 class="stit" style="font-size:1.8rem">🎥 Opičák v akci</h3>
+    </div>
+    <div class="reel-wrap">
+      <iframe src="https://www.instagram.com/reel/DXUkLdfDQbz/embed" width="400" height="480" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe>
+    </div>
+
+    <p class="gnote">📸 Sleduj <strong>@opici.expres</strong> na Instagramu — novinky průběžně!</p>
   </div>
 </section>
 
-<section id="kontakt">
-  <div class="container">
-    <p class="section-eyebrow">Spojte se s námi</p>
-    <h2 class="section-title">Objednejte se</h2>
-    <p class="section-sub">Napište, zavolejte nebo pošlete zprávu. Odpovím co nejdříve.</p>
-    <div class="kontakt-grid">
-      <div class="kontakt-info">
-        <div class="kontakt-item"><div class="k-icon">📞</div><div><div class="k-label">Telefon</div><a href="tel:734259525" class="k-value">734 259 525</a></div></div>
-        <div class="kontakt-item"><div class="k-icon">📸</div><div><div class="k-label">Instagram</div><a href="https://instagram.com/opici.expres" target="_blank" class="k-value">@opici.expres</a></div></div>
-        <div class="kontakt-item"><div class="k-icon">✉️</div><div><div class="k-label">Email</div><a href="mailto:opici.expres@gmail.com" class="k-value">opici.expres@gmail.com</a></div></div>
-        <div class="kontakt-item"><div class="k-icon">📍</div><div><div class="k-label">Lokalita</div><span class="k-value">Opava & okolí</span></div></div>
-        <div class="kontakt-item"><div class="k-icon">🕐</div><div><div class="k-label">Dostupnost</div><span class="k-value">Po–Ne, termín dohodou</span></div></div>
+<!-- IG -->
+<section id="ig">
+  <div class="igw">
+    <h2 class="igt">SLEDUJ NÁS NA INSTAGRAMU</h2>
+    <p class="igs">Fotky před/po, tipy na čištění a zákulisí práce</p>
+    <div class="igc">
+      <img src="qr.png" alt="QR Instagram" class="igq">
+      <div class="igi">
+        <div class="igh">@opici.expres</div>
+        <div class="igf">
+          <div class="igfi">📸 Fotky před a po čištění</div>
+          <div class="igfi">🎥 Videa z práce v terénu</div>
+          <div class="igfi">🐒 Zákulisí Opičího Expresu</div>
+          <div class="igfi">🎁 Akce a slevy pro sledující</div>
+        </div>
+        <a href="https://instagram.com/opici.expres" target="_blank" class="btn by">📸 Sledovat na Instagramu</a>
       </div>
-      <form class="kontakt-form" action="https://formspree.io/f/mqegzajj" method="POST">
-        <div class="form-title">Nezávazná poptávka</div>
-        <div class="form-group"><label>Vaše jméno</label><input type="text" name="jmeno" placeholder="Jan Novák" required></div>
-        <div class="form-group"><label>Telefon</label><input type="tel" name="telefon" placeholder="777 123 456" required></div>
-        <div class="form-group"><label>Co potřebujete?</label>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt">
+  <div class="con">
+    <p class="eye">Spojte se s námi</p>
+    <h2 class="stit">Objednejte se</h2>
+    <p class="ssub">Zavolejte, napište nebo pošlete fotku na Instagram.</p>
+    <div class="kg">
+      <div class="ki">
+        <div class="kit"><div class="kic">📞</div><div><div class="kl">Telefon</div><a href="tel:734259525" class="kv">734 259 525</a></div></div>
+        <div class="kit"><div class="kic">📸</div><div><div class="kl">Instagram</div><a href="https://instagram.com/opici.expres" target="_blank" class="kv">@opici.expres</a></div></div>
+        <div class="kit"><div class="kic">✉️</div><div><div class="kl">Email</div><a href="mailto:opici.expres@gmail.com" class="kv">opici.expres@gmail.com</a></div></div>
+        <div class="kit"><div class="kic">📍</div><div><div class="kl">Lokalita</div><span class="kv">Opava · Ostrava a okolí</span></div></div>
+        <div class="kit"><div class="kic">🕐</div><div><div class="kl">Dostupnost</div><span class="kv">Po–Ne, termín dohodou</span></div></div>
+      </div>
+      <form class="kf" action="https://formspree.io/f/mqegzajj" method="POST">
+        <div class="kft">Nezávazná poptávka</div>
+        <div class="fg"><label>Vaše jméno</label><input type="text" name="jmeno" placeholder="Jan Novák" required></div>
+        <div class="fg"><label>Telefon</label><input type="tel" name="telefon" placeholder="777 123 456" required></div>
+        <div class="fg"><label>Co potřebujete?</label>
           <select name="sluzba" required>
             <option value="">Vyberte...</option>
             <option>Sedačka / pohovka</option>
             <option>Koberec</option>
             <option>Auto interiér</option>
+            <option>B2B — pravidelná spolupráce</option>
             <option>Více věcí najednou</option>
           </select>
         </div>
-        <div class="form-group"><label>Zpráva (nepovinné)</label><textarea name="zprava" placeholder="Lokalita, termín, detaily..."></textarea></div>
+        <div class="fg">
+          <label>Zpráva (nepovinné)</label>
+          <textarea name="zprava" placeholder="Lokalita, termín, detaily..."></textarea>
+          <div class="fh">💡 Tip: Pošlete fotku na @opici.expres — kalkulace do hodiny!</div>
+        </div>
         <input type="hidden" name="_subject" value="Nová poptávka — Opičí Expres 🐒">
         <input type="hidden" name="_next" value="https://opiciexpres.github.io/opiciexpres">
-        <button type="submit" class="form-submit">🐒 Odeslat poptávku</button>
+        <button type="submit" class="fsub">🐒 Odeslat poptávku</button>
       </form>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 <strong>Opičí Expres</strong> — Profi tepování Opava & okolí</p>
-  <p style="margin-top:0.3rem">Žádné opičárny. Suché do hodiny. 🍌</p>
-  <div style="margin-top:0.5rem;font-size:0.72rem;opacity:0.4;font-style:italic">🫛 Láskuju!</div>
+  <p>© 2025 <strong>Opičí Expres</strong> — Profi tepování Opava · Ostrava a okolí</p>
+  <p style="margin-top:.3rem">Žádné opičárny. Suché do hodiny. 🍌</p>
+  <div style="margin-top:.5rem;font-size:.7rem;opacity:.4;font-style:italic">🫛 Láskuju!</div>
 </footer>
 
-<div class="floating-cta">
-  <a href="https://instagram.com/opici.expres" target="_blank" class="float-btn float-ig">📸</a>
-  <a href="tel:734259525" class="float-btn float-tel">📞</a>
+<div class="fcta">
+  <a href="https://instagram.com/opici.expres" target="_blank" class="fb fbi">📸</a>
+  <a href="tel:734259525" class="fb fbt">📞</a>
 </div>
 
 <div id="bananas"></div>
 
 <script>
+/* KALKULAČKA */
+const P={
+  'sedacka':{base:450,label:'sedací místo',ql:'Počet sedacích míst'},
+  'koberec-prum':{base:55,label:'m²',ql:'Plocha v m²'},
+  'koberec':{base:90,label:'m²',ql:'Plocha v m²'},
+  'koberec-design':{base:125,label:'m²',ql:'Plocha v m²'},
+  'auto-seat':{base:500,label:'sedačka',ql:'Počet sedaček'}
+};
+const chks={pets:false,impreg:false,deo:false,suv:false};
+
+function tg(el,k){el.classList.toggle('on');chks[k]=el.classList.contains('on');recalc();}
+
+function recalc(){
+  const type=document.getElementById('c-type').value;
+  const qty=Math.max(1,parseFloat(document.getElementById('c-qty').value)||1);
+  const state=parseFloat(document.getElementById('c-state').value);
+  const p=P[type];
+  document.getElementById('c-qty-l').textContent=p.ql;
+
+  let base=p.base*qty;
+  let bd=[];
+  bd.push({n:qty+'× '+p.label+' × '+p.base+' Kč',v:base});
+
+  if(state>1){
+    const add=base*(state-1);
+    base*=state;
+    bd.push({n:'Znečištění ×'+state,v:'+'+Math.round(add)});
+  }
+  if(chks.pets){
+    const add=type.includes('koberec')?qty*30:250;
+    base+=add;bd.push({n:'🐾 Mazlíčci',v:'+'+add});
+  }
+  if(chks.suv&&type==='auto-seat'){
+    const add=base*0.2;base+=add;
+    bd.push({n:'🚙 SUV/dodávka +20%',v:'+'+Math.round(add)});
+  }
+  if(chks.impreg){
+    const add=type.includes('koberec')?qty*50:350;
+    base+=add;bd.push({n:'✨ Impregnace',v:'+'+add});
+  }
+  if(chks.deo){base+=200;bd.push({n:'🌿 Dezodorace',v:'+200'});}
+
+  let final=Math.max(800,base);
+  if(final===800&&base<800)bd.push({n:'Minimální výjezd',v:'800'});
+  final=Math.ceil(final/50)*50;
+
+  document.getElementById('r-num').textContent=final.toLocaleString('cs-CZ');
+  document.getElementById('r-break').innerHTML=bd.map(b=>
+    '<div class="br"><span>'+b.n+'</span><span>'+(typeof b.v==='number'?Math.round(b.v):b.v)+' Kč</span></div>'
+  ).join('');
+}
+recalc();
+
+/* BANÁNY */
 if(history.scrollRestoration)history.scrollRestoration='manual';
 window.addEventListener('load',function(){window.scrollTo({top:0,behavior:'instant'});});
-
 const bc=document.getElementById('bananas');
-for(let i=0;i<16;i++){
+for(let i=0;i<14;i++){
   const b=document.createElement('div');
-  const s=Math.random()*20+12;
-  b.style.cssText=`position:absolute;left:${Math.random()*100}%;top:-50px;font-size:${s}px;opacity:${Math.random()*0.5+0.2};animation:floatBanana ${Math.random()*10+14}s ${Math.random()*12}s linear infinite;`;
-  b.textContent='🍌';
-  bc.appendChild(b);
+  const s=Math.random()*18+12;
+  b.style.cssText='position:absolute;left:'+Math.random()*100+'%;top:-50px;font-size:'+s+'px;opacity:'+(Math.random()*.4+.15)+';animation:fb '+(Math.random()*10+14)+'s '+(Math.random()*12)+'s linear infinite;';
+  b.textContent='🍌';bc.appendChild(b);
 }
-const st=document.createElement('style');
-st.textContent='@keyframes floatBanana{0%{transform:translateY(-60px) rotate(0deg)}100%{transform:translateY(110vh) rotate(720deg)}}';
-document.head.appendChild(st);
 </script>
 </body>
 </html>
